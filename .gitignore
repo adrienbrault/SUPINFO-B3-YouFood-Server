@@ -1,13 +1,16 @@
 # Symfony directories
 /vendor/*
-app/logs/*
-app/cache/*
+/app/logs/*
+/app/cache/*
 /web/uploads/*
 /web/bundles/*
 /app/bootstrap.php.cache
 
+# Composer
+/composer.phar
+
 # PHPStorm
-.idea/
+/.idea/
 
 # Mac OS
 .DS_Store
