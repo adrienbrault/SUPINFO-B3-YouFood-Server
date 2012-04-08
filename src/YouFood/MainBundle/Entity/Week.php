@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Week
  *
- * @ORM\Entity(repositoryClass="YouFood\MainBundle\Entity\WeekRepository")
+ * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\WeekRepository")
  */
 class Week
 {

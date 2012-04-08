@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
- * @ORM\Entity(repositoryClass="YouFood\MainBundle\Entity\CollationRepository")
+ * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\CollationRepository")
  */
 class Menu extends Product
 {

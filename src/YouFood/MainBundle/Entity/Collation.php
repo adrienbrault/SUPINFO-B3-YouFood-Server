@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
- * @ORM\Entity(repositoryClass="YouFood\MainBundle\Entity\CollationRepository")
+ * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\CollationRepository")
  */
 class Collation extends Product
 {
