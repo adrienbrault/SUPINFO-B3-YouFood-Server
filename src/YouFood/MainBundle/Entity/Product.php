@@ -37,6 +37,20 @@ abstract class Product
     private $themes;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string")
+     */
+    private $name;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(type="float")
+     */
+    private $price;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -58,5 +72,37 @@ abstract class Product
     public function getThemes()
     {
         return $this->themes;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }
