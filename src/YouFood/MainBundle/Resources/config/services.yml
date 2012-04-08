@@ -13,7 +13,7 @@ services:
           - YouFood\MainBundle\Entity\Category
           - SonataAdminBundle:CRUD
         calls:
-          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+          - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
           - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Category }
 
@@ -24,7 +24,7 @@ services:
           - YouFood\MainBundle\Entity\Collation
           - SonataAdminBundle:CRUD
         calls:
-          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+          - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
           - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Collation }
 
@@ -35,7 +35,7 @@ services:
           - YouFood\MainBundle\Entity\Menu
           - SonataAdminBundle:CRUD
         calls:
-          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+          - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
           - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Menu }
 
@@ -46,7 +46,7 @@ services:
           - YouFood\MainBundle\Entity\Theme
           - SonataAdminBundle:CRUD
         calls:
-          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+          - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
           - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Theme }
 
@@ -57,6 +57,6 @@ services:
           - YouFood\MainBundle\Entity\Week
           - SonataAdminBundle:CRUD
         calls:
-          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+          - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
           - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Week }
