@@ -1,6 +1,6 @@
 <?php
 
-namespace YouFood\AdminBundle\Admin;
+namespace YouFood\MainBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -8,15 +8,21 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class WeekAdmin extends Admin
+/**
+ * MenuAdmin
+ *
+ * @author Adrien Brault <adrien.brault@gmail.com>
+ */
+class MenuAdmin extends Admin
 {
+    /**
+     * {@inheritdoc}
+     */
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('year')
-            ->add('weekNumber')
-            ->add('theme')
+            ->add('price')
 
         // add custom action links
             ->add('_action', 'actions', array(
@@ -28,21 +34,27 @@ class WeekAdmin extends Admin
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function configureShowFields(ShowMapper $filter)
     {
         $filter
-            ->add('year')
-            ->add('weekNumber')
-            ->add('theme')
+            ->add('name')
+            ->add('price')
+            ->add('collations')
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('year')
-            ->add('weekNumber')
-            ->add('theme')
+            ->add('name')
+            ->add('price')
+            ->add('collations')
         ;
     }
 }

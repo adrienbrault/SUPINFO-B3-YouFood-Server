@@ -7,6 +7,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Week
  *
+ * @author Adrien Brault <adrien.brault@gmail.com>
+ *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\WeekRepository")
  */
 class Week

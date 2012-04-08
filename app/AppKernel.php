@@ -28,7 +28,6 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
 
             new YouFood\MainBundle\YouFoodMainBundle(),
-            new YouFood\AdminBundle\YouFoodAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace YouFood\AdminBundle\Admin;
+namespace YouFood\MainBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Form\FormMapper;
@@ -8,8 +8,16 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-class ThemeAdmin extends Admin
+/**
+ * CategoryAdmin
+ *
+ * @author Adrien Brault <adrien.brault@gmail.com>
+ */
+class CategoryAdmin extends Admin
 {
+    /**
+     * {@inheritdoc}
+     */
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
@@ -25,6 +33,9 @@ class ThemeAdmin extends Admin
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function configureShowFields(ShowMapper $filter)
     {
         $filter
@@ -32,6 +43,9 @@ class ThemeAdmin extends Admin
         ;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper

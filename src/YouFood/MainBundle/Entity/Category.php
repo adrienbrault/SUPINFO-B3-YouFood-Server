@@ -8,6 +8,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Category
  *
+ * @author Adrien Brault <adrien.brault@gmail.com>
+ *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\CategoryRepository")
  */
 class Category
