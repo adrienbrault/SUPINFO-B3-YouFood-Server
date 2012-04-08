@@ -1,9 +1,9 @@
 parameters:
-    you_food.admin.category.class: YouFood\AdminBundle\Admin\CategoryAdmin
-    you_food.admin.collation.class: YouFood\AdminBundle\Admin\CollationAdmin
-    you_food.admin.menu.class: YouFood\AdminBundle\Admin\MenuAdmin
-    you_food.admin.theme.class: YouFood\AdminBundle\Admin\ThemeAdmin
-    you_food.admin.week.class: YouFood\AdminBundle\Admin\WeekAdmin
+    you_food.admin.category.class: YouFood\MainBundle\Admin\CategoryAdmin
+    you_food.admin.collation.class: YouFood\MainBundle\Admin\CollationAdmin
+    you_food.admin.menu.class: YouFood\MainBundle\Admin\MenuAdmin
+    you_food.admin.theme.class: YouFood\MainBundle\Admin\ThemeAdmin
+    you_food.admin.week.class: YouFood\MainBundle\Admin\WeekAdmin
 
 services:
     you_food.admin.category:
