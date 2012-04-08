@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\TableRepository")
+ * @ORM\Table(name="tables")
  */
 class Table
 {

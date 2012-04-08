@@ -93,9 +93,15 @@ sonata_admin:
             - { position: left, type: sonata.admin.block.admin_list }
 
         groups:
-            youfood_menu:
+            you_food.menu:
                 label: Menu
                 items: ~
+            you_food.order:
+                label: Order
+                items: ~
+            you_food.management:
+                label: Management
+                items:
 
 sonata_doctrine_orm_admin: ~
 
