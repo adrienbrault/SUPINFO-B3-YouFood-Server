@@ -23,19 +23,17 @@ class Collation extends Product
     /**
      * @param Category $category
      */
-    public function setCategory($category)
+    public function setCategory(Category $category)
     {
-        if (null !== $this->category) {
-            $this->category->getCollations()->removeElement($this); // Update inverse side
-        }
+        // Update inverse side
+        $this->category->getCollations()->removeElement($this);
+        $category->getCollations()->add($this);
 
         $this->category = $category;
-
-        $category->getCollations()->add($this); // Update inverse side
     }
 
     /**
-     * @return \YouFood\MainBundle\Entity\Category
+     * @return Category
      */
     public function getCategory()
     {
