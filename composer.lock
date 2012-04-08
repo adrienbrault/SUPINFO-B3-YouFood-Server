@@ -1,5 +1,5 @@
 {
-    "hash": "10f2fc189932ab26d499830e12a2da61",
+    "hash": "540cddd09e742f6e068680b5abd4ced6",
     "packages": [
         {
             "package": "doctrine/common",
@@ -28,7 +28,8 @@
         },
         {
             "package": "jms/di-extra-bundle",
-            "version": "1.0.1"
+            "version": "dev-master",
+            "source-reference": "e5eb483598d1424cc812250ff0a62e5ad227df8d"
         },
         {
             "package": "jms/metadata",
