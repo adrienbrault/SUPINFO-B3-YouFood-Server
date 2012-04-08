@@ -100,4 +100,12 @@ class Theme
 
         $product->getThemes()->add($this); // Update inverse side
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

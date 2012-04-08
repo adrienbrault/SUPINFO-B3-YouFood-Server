@@ -74,4 +74,12 @@ class Category
     {
         return $this->collations;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }

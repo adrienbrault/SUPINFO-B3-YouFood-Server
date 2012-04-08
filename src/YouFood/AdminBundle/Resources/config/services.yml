@@ -1,0 +1,62 @@
+parameters:
+    you_food.admin.category.class: YouFood\AdminBundle\Admin\CategoryAdmin
+    you_food.admin.collation.class: YouFood\AdminBundle\Admin\CollationAdmin
+    you_food.admin.menu.class: YouFood\AdminBundle\Admin\MenuAdmin
+    you_food.admin.theme.class: YouFood\AdminBundle\Admin\ThemeAdmin
+    you_food.admin.week.class: YouFood\AdminBundle\Admin\WeekAdmin
+
+services:
+    you_food.admin.category:
+        class: %you_food.admin.category.class%
+        arguments:
+          - ~
+          - YouFood\MainBundle\Entity\Category
+          - SonataAdminBundle:CRUD
+        calls:
+          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Category }
+
+    you_food.admin.collation:
+        class: %you_food.admin.collation.class%
+        arguments:
+          - ~
+          - YouFood\MainBundle\Entity\Collation
+          - SonataAdminBundle:CRUD
+        calls:
+          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Collation }
+
+    you_food.admin.menu:
+        class: %you_food.admin.menu.class%
+        arguments:
+          - ~
+          - YouFood\MainBundle\Entity\Menu
+          - SonataAdminBundle:CRUD
+        calls:
+          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Menu }
+
+    you_food.admin.theme:
+        class: %you_food.admin.theme.class%
+        arguments:
+          - ~
+          - YouFood\MainBundle\Entity\Theme
+          - SonataAdminBundle:CRUD
+        calls:
+          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Theme }
+
+    you_food.admin.week:
+        class: %you_food.admin.week.class%
+        arguments:
+          - ~
+          - YouFood\MainBundle\Entity\Week
+          - SonataAdminBundle:CRUD
+        calls:
+          - [ setTranslationDomain, [ YouFood\Admin\AdminBundle ] ]
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: youfood_menu, label: Week }

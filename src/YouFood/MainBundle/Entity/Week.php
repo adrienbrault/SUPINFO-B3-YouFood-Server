@@ -110,4 +110,20 @@ class Week
     {
         return $this->year;
     }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return sprintf('%d %d', $this->getYear(), $this->getWeekNumber());
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
