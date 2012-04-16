@@ -33,7 +33,7 @@ class Category
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Collation", mappedBy="Category")
+     * @ORM\OneToMany(targetEntity="Collation", mappedBy="category")
      */
     private $collations;
 
