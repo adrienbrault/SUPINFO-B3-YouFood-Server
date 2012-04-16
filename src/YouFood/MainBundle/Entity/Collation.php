@@ -26,7 +26,9 @@ class Collation extends Product
     public function setCategory(Category $category)
     {
         // Update inverse side
-        $this->category->getCollations()->removeElement($this);
+        if (null !== $this->category) {
+            $this->category->getCollations()->removeElement($this);
+        }
         $category->getCollations()->add($this);
 
         $this->category = $category;
