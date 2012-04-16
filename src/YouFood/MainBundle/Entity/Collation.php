@@ -3,6 +3,7 @@
 namespace YouFood\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 use Application\Sonata\MediaBundle\Entity\Media;
 
@@ -28,6 +29,20 @@ class Collation extends Product
      * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"all"})
      */
     private $image;
+
+    /**
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="MenuCollation", mappedBy="collation", cascade={"persist"})
+     */
+    private $menuCollations;
+
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->menuCollations = new ArrayCollection();
+    }
 
     /**
      * @param Category $category
@@ -65,5 +80,21 @@ class Collation extends Product
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getMenuCollations()
+    {
+        return $this->menuCollations;
+    }
+
+    /**
+     * @param ArrayCollection $menuCollations
+     */
+    public function setMenuCollations($menuCollations)
+    {
+        $this->menuCollations = $menuCollations;
     }
 }

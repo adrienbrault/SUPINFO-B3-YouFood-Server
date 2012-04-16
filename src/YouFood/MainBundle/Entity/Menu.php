@@ -17,9 +17,10 @@ class Menu extends Product
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Collation")
+     * @ORM\OneToMany(targetEntity="MenuCollation", mappedBy="menu", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OrderBy({"position" = "ASC"})
      */
-    private $collations;
+    private $menuCollations;
 
     /**
      * Constructor
@@ -28,22 +29,33 @@ class Menu extends Product
     {
         parent::__construct();
 
-        $this->collations = new ArrayCollection();
+        $this->menuCollations = new ArrayCollection();
     }
 
     /**
      * @return ArrayCollection
      */
-    public function getCollations()
+    public function getMenuCollations()
     {
-        return $this->collations;
+        return $this->menuCollations;
     }
 
     /**
-     * @param Collation $collation
+     * @param ArrayCollection $menuCollations
      */
-    public function addCollation(Collation $collation)
+    public function setMenuCollations($menuCollations)
     {
-        $this->collations[] = $collation;
+        foreach ($menuCollations as $menuCollation) {
+            $menuCollation->setMenu($this);
+        }
+
+        $this->menuCollations = $menuCollations;
+    }
+
+    public function addMenuCollations(MenuCollation $menuCollation)
+    {
+        $menuCollation->setMenu($this);
+
+        $this->menuCollations[] = $menuCollation;
     }
 }

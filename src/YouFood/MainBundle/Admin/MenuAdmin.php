@@ -54,7 +54,13 @@ class MenuAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('price')
-            ->add('collations')
+            ->add('menuCollations', 'sonata_type_collection', array(
+                'by_reference' => false,
+            ), array(
+                'edit' => 'inline',
+                'inline' => 'table',
+                'sortable'  => 'position',
+            ))
         ;
     }
 }
