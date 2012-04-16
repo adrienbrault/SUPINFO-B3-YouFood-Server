@@ -47,7 +47,12 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
-        auto_mapping: true
+        entity_managers:
+            default:
+                mappings:
+                    YouFoodMainBundle: ~
+                    SonataMediaBundle: ~
+                    ApplicationSonataMediaBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -104,5 +109,26 @@ sonata_admin:
                 items:
 
 sonata_doctrine_orm_admin: ~
+
+sonata_media:
+    default_context: default
+    db_driver: doctrine_orm # or doctrine_mongodb
+    contexts:
+        default:  # the default context is mandatory
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 100, quality: 70 }
+                big:   { width: 500, quality: 70 }
+
+    cdn:
+        server:
+            path: /uploads/media # http://media.sonata-project.org/
+
+    filesystem:
+        local:
+            directory:  %kernel.root_dir%/../web/uploads/media
+            create:     true
 
 you_food_main: ~
