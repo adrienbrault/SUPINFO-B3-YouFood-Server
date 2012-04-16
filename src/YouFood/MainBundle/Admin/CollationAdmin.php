@@ -58,7 +58,7 @@ class CollationAdmin extends Admin
             ->add('name')
             ->add('price')
             ->add('category')
-            ->add('themes')
+            ->add('themes', null, array('required' => false, 'expanded' => true))
             ->add('image', 'sonata_type_model', array(), array('edit' => 'list', 'link_parameters' => array('context' => 'default')));
         ;
     }

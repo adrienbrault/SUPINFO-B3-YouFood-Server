@@ -32,7 +32,7 @@ abstract class Product
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Theme", mappedBy="products")
+     * @ORM\ManyToMany(targetEntity="Theme", inversedBy="products")
      */
     private $themes;
 

@@ -40,7 +40,7 @@ class Theme
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Product", inversedBy="themes")
+     * @ORM\ManyToMany(targetEntity="Product", mappedBy="themes")
      */
     private $products;
 
