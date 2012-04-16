@@ -44,6 +44,7 @@ class CollationAdmin extends Admin
             ->add('name')
             ->add('price')
             ->add('category')
+            ->add('themes')
         ;
     }
 
@@ -56,6 +57,7 @@ class CollationAdmin extends Admin
             ->add('name')
             ->add('price')
             ->add('category')
+            ->add('themes')
         ;
     }
 }

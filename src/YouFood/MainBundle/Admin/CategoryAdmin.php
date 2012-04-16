@@ -40,6 +40,7 @@ class CategoryAdmin extends Admin
     {
         $filter
             ->add('name')
+            ->add('collations')
         ;
     }
 
