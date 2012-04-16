@@ -1,13 +1,13 @@
 {
-    "hash": "540cddd09e742f6e068680b5abd4ced6",
+    "hash": "50125627610408be8c4afc708b7b51d8",
     "packages": [
         {
             "package": "doctrine/common",
-            "version": "2.2.1"
+            "version": "2.2.2"
         },
         {
             "package": "doctrine/dbal",
-            "version": "2.2.1"
+            "version": "2.2.2"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -17,6 +17,11 @@
         {
             "package": "doctrine/orm",
             "version": "2.2.1"
+        },
+        {
+            "package": "imagine/Imagine",
+            "version": "dev-master",
+            "source-reference": "v0.2.8"
         },
         {
             "package": "jms/aop-bundle",
@@ -29,7 +34,7 @@
         {
             "package": "jms/di-extra-bundle",
             "version": "dev-master",
-            "source-reference": "e5eb483598d1424cc812250ff0a62e5ad227df8d"
+            "source-reference": "7409de80a7da2f1accd2efdcb615e74f42549270"
         },
         {
             "package": "jms/metadata",
@@ -38,6 +43,11 @@
         {
             "package": "jms/security-extra-bundle",
             "version": "1.1.0"
+        },
+        {
+            "package": "knplabs/gaufrette",
+            "version": "dev-master",
+            "source-reference": "575f2d64974fe95b9197f58899da3be06eb6ffe5"
         },
         {
             "package": "knplabs/knp-menu",
@@ -52,7 +62,12 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "b25d1fdd07a70585d15c84735e82664acec88eab"
+            "source-reference": "eb3b5eb732e5f172d5aa12dea0af36b7989c18b3"
+        },
+        {
+            "package": "kriswallsmith/buzz",
+            "version": "dev-master",
+            "source-reference": "cbb620a5c79157015bd9b8029417264be03890bc"
         },
         {
             "package": "monolog/monolog",
@@ -76,12 +91,12 @@
         {
             "package": "sonata-project/admin-bundle",
             "version": "dev-master",
-            "source-reference": "6ed5ddc387605bc94d05e2d24d16b10da2f70646"
+            "source-reference": "dae852668c8211bdd1276229dba72c568e3da16c"
         },
         {
             "package": "sonata-project/block-bundle",
             "version": "dev-master",
-            "source-reference": "ff34c3fe75bcedc739f3d4f8ad7f0a3b840b75e4"
+            "source-reference": "8609f372f02726460309a69b281152c56e9af8b9"
         },
         {
             "package": "sonata-project/cache-bundle",
@@ -94,14 +109,24 @@
             "source-reference": "1ee18637cf8de79342489fbc2bb3f9c42998ab40"
         },
         {
+            "package": "sonata-project/easy-extends-bundle",
+            "version": "dev-master",
+            "source-reference": "1723d96c856b713925e946b66fbf854394fdaecd"
+        },
+        {
             "package": "sonata-project/exporter",
             "version": "dev-master",
-            "source-reference": "7b489a99446f41ba3c3676774b5ac41329402a8d"
+            "source-reference": "be2921f67b291a22186164af27a3aab9a577db17"
         },
         {
             "package": "sonata-project/jquery-bundle",
             "version": "dev-master",
             "source-reference": "01ffb8d1a7a4bb3971aed003e4f1ef050a0701aa"
+        },
+        {
+            "package": "sonata-project/media-bundle",
+            "version": "dev-master",
+            "source-reference": "35b1e2fdd178174e93c3d6ef15cd3877351e7a15"
         },
         {
             "package": "swiftmailer/swiftmailer",
@@ -110,7 +135,7 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "a771e48366d80002b0046ba43e658d067170634d"
+            "source-reference": "d370e914e86518e88aa00ab266796ee032b8262e"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -130,7 +155,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "d6948581ac4d5d349584b6246684ae656126d481",
+            "source-reference": "e7470ffebb07d1f09fe80c98670a00236d581563",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
@@ -141,9 +166,10 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "46ae99fa4c11f76248b12da647fe64399f860e82",
+            "source-reference": "5799a889c03e38a2c6d0b475194ab8c0b8904487",
             "alias": "1.7.9999999.9999999-dev"
         }
     ],
+    "packages-dev": null,
     "aliases": []
 }

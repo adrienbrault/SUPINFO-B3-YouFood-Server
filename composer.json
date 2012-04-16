@@ -18,7 +18,12 @@
         "sensio/generator-bundle": "dev-master",
         "jms/security-extra-bundle": "1.1.0",
         "jms/di-extra-bundle": "dev-master",
-        "sonata-project/doctrine-orm-admin-bundle": "dev-master"
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "sonata-project/media-bundle": "dev-master",
+        "sonata-project/easy-extends-bundle": "dev-master",
+        "knplabs/gaufrette" : "*",
+        "imagine/Imagine" : "dev-master",
+        "kriswallsmith/buzz" : "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
