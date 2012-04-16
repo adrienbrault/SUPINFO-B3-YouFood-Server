@@ -45,6 +45,7 @@ class CollationAdmin extends Admin
             ->add('price')
             ->add('category')
             ->add('themes')
+            ->add('image')
         ;
     }
 
@@ -58,6 +59,7 @@ class CollationAdmin extends Admin
             ->add('price')
             ->add('category')
             ->add('themes')
+            ->add('image', 'sonata_type_model', array(), array('edit' => 'list', 'link_parameters' => array('context' => 'default')));
         ;
     }
 }
