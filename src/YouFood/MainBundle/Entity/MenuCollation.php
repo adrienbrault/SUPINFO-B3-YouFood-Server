@@ -74,7 +74,7 @@ class MenuCollation
     /**
      * @param Collation $collation
      */
-    public function setCollation($collation)
+    public function setCollation(Collation $collation)
     {
         $this->collation = $collation;
     }

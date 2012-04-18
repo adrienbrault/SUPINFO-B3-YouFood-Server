@@ -44,8 +44,13 @@ class Table
     public function setZone(Zone $zone)
     {
         // Update inverse side
-        $this->zone->getTables()->removeElement($this);
-        $zone->getTables()->add($this);
+        if (null !== $this->zone) {
+            $this->zone->getTables()->removeElement($this);
+        }
+
+        if (null !== $zone) {
+            $zone->getTables()->add($this);
+        }
 
         $this->zone = $zone;
     }

@@ -53,7 +53,10 @@ class Collation extends Product
         if (null !== $this->category) {
             $this->category->getCollations()->removeElement($this);
         }
-        $category->getCollations()->add($this);
+
+        if (null !== $category) {
+            $category->getCollations()->add($this);
+        }
 
         $this->category = $category;
     }

@@ -48,11 +48,16 @@ class Zone
     /**
      * @param Restaurant $restaurant
      */
-    public function setRestaurant($restaurant)
+    public function setRestaurant(Restaurant $restaurant)
     {
         // Update inverse side
-        $this->restaurant->getZones()->removeElement($this);
-        $restaurant->getZones()->add($this);
+        if (null !== $this->restaurant) {
+            $this->restaurant->getZones()->removeElement($this);
+        }
+
+        if (null !== $restaurant) {
+            $restaurant->getZones()->add($this);
+        }
 
         $this->restaurant = $restaurant;
     }

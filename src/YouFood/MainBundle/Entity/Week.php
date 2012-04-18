@@ -65,8 +65,13 @@ class Week
     public function setTheme(Theme $theme)
     {
         // Update inverse side
-        $this->theme->getWeeks()->removeElement($this);
-        $theme->getWeeks()->add($this);
+        if (null != $this->theme) {
+            $this->theme->getWeeks()->removeElement($this);
+        }
+
+        if (null !== $theme) {
+            $theme->getWeeks()->add($this);
+        }
 
         $this->theme = $theme;
     }
