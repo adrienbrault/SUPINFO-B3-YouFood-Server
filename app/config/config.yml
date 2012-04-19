@@ -51,8 +51,13 @@ doctrine:
             default:
                 mappings:
                     YouFoodMainBundle: ~
+
                     SonataMediaBundle: ~
                     ApplicationSonataMediaBundle: ~
+
+                    FOSUserBundle: ~
+                    SonataUserBundle: ~
+                    ApplicationSonataUserBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -106,7 +111,11 @@ sonata_admin:
                 label: Management
             sonata_media:
                 label: Media
+            sonata_user:
+                label: User
                 items:
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group
 
 sonata_doctrine_orm_admin: ~
 
@@ -130,5 +139,20 @@ sonata_media:
         local:
             directory:  %kernel.root_dir%/../web/uploads/media
             create:     true
+
+fos_user:
+    db_driver:      orm
+    firewall_name:  admin
+    user_class:     %application.user.class%
+
+    group:
+        group_class: %application.group.class%
+
+sonata_user:
+    security_acl: true
+    manager_type: orm
+    class:
+        user:   %application.user.class%
+        group:  %application.group.class%
 
 you_food_main: ~

@@ -12,6 +12,13 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+
+sonata_user_impersonating:
+    pattern: /admin/dashboard
+
 gallery:
     resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
     prefix: /media/gallery

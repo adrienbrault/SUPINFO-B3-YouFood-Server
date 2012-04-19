@@ -13,3 +13,6 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    application.user.class:  Application\Sonata\UserBundle\Entity\User
+    application.group.class: Application\Sonata\UserBundle\Entity\Group

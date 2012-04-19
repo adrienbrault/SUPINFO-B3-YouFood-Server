@@ -1,5 +1,5 @@
 {
-    "hash": "50125627610408be8c4afc708b7b51d8",
+    "hash": "696b60a3ae7223f7caba8a7399c0448d",
     "packages": [
         {
             "package": "doctrine/common",
@@ -17,6 +17,11 @@
         {
             "package": "doctrine/orm",
             "version": "2.2.1"
+        },
+        {
+            "package": "friendsofsymfony/user-bundle",
+            "version": "dev-master",
+            "source-reference": "59caf8902291b42e86dc8b4ea1aa19e9f30afff8"
         },
         {
             "package": "imagine/Imagine",
@@ -52,7 +57,7 @@
         {
             "package": "knplabs/knp-menu",
             "version": "dev-master",
-            "source-reference": "f7970583d4da8776c037e2d49878d8160361e373"
+            "source-reference": "ad10e1ec8f493bb29e28c02284f38c5afd4bfa07"
         },
         {
             "package": "knplabs/knp-menu-bundle",
@@ -62,12 +67,12 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "eb3b5eb732e5f172d5aa12dea0af36b7989c18b3"
+            "source-reference": "3acfb6afa50dd1dca387a8dfb641cd3b98a8584d"
         },
         {
             "package": "kriswallsmith/buzz",
             "version": "dev-master",
-            "source-reference": "cbb620a5c79157015bd9b8029417264be03890bc"
+            "source-reference": "83147864bfac8d47a56ac26b901b8f39ef078489"
         },
         {
             "package": "monolog/monolog",
@@ -76,7 +81,7 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "38be63ebb45cc1fbeaff3f2bdf6d0ed216305a24"
+            "source-reference": "a2f09ae4b38533d9f16083b740f6a77fb5efd313"
         },
         {
             "package": "sensio/framework-extra-bundle",
@@ -101,7 +106,7 @@
         {
             "package": "sonata-project/cache-bundle",
             "version": "dev-master",
-            "source-reference": "010f06a6ccdcecf690c1cbdf0ea7e477b2ffa3b2"
+            "source-reference": "58064381afb1d72100da24ad15f70a7e0573ca11"
         },
         {
             "package": "sonata-project/doctrine-orm-admin-bundle",
@@ -129,6 +134,11 @@
             "source-reference": "35b1e2fdd178174e93c3d6ef15cd3877351e7a15"
         },
         {
+            "package": "sonata-project/user-bundle",
+            "version": "dev-master",
+            "source-reference": "0d5f655dde9e226888d4403f651a3d48c85c5008"
+        },
+        {
             "package": "swiftmailer/swiftmailer",
             "version": "4.1.6"
         },
@@ -140,7 +150,7 @@
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "289442e385e7c0fe4aa2e8884d11e774a8f9ad99"
+            "source-reference": "aea0145e5669ed855db430e0f53536fab16b6dd7"
         },
         {
             "package": "symfony/swiftmailer-bridge",
@@ -150,23 +160,23 @@
         {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
-            "source-reference": "75f8f95c201922a966274547131b33291d15d51b"
+            "source-reference": "1c6b57fe57210e9dcb5b4586d6572f47d17a25d7"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e7470ffebb07d1f09fe80c98670a00236d581563",
+            "source-reference": "4d8461f243e8bd5c45eff02f85181f7b59c06a6a",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
             "package": "twig/extensions",
             "version": "dev-master",
-            "source-reference": "4c831657215e51568fcb31bb9142e827f9a69bd5"
+            "source-reference": "446d870272cd87a720e95242eade38a2acf56eaa"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "5799a889c03e38a2c6d0b475194ab8c0b8904487",
+            "source-reference": "037f86aa550737abf633e991f3606b9de5a69657",
             "alias": "1.7.9999999.9999999-dev"
         }
     ],
