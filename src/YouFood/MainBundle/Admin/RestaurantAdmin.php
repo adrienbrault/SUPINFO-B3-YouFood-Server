@@ -27,12 +27,12 @@ class RestaurantAdmin extends Admin
 
         // add custom action links
             ->add('_action', 'actions', array(
-            'actions' => array(
-                'view' => array(),
-                'edit' => array(),
-                'delete' => array(),
-            )
-        ))
+                'actions' => array(
+                    'view' => array(),
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
     }
 
