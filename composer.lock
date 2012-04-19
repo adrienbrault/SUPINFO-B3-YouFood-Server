@@ -165,7 +165,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "4d8461f243e8bd5c45eff02f85181f7b59c06a6a",
+            "source-reference": "e7470ffebb07d1f09fe80c98670a00236d581563",
             "alias": "2.1.9999999.9999999-dev"
         },
         {
