@@ -9,11 +9,11 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
 /**
- * MenuCollationAdmin
+ * MenuHasCollationAdmin
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  */
-class MenuCollationAdmin extends Admin
+class MenuHasCollationAdmin extends Admin
 {
     /**
      * {@inheritdoc}

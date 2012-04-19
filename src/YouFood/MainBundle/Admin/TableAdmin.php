@@ -18,29 +18,11 @@ class TableAdmin extends Admin
     /**
      * {@inheritdoc}
      */
-    protected function configureListFields(ListMapper $listMapper)
-    {
-        $listMapper
-            ->addIdentifier('id')
-            ->add('zone')
-
-        // add custom action links
-            ->add('_action', 'actions', array(
-            'actions' => array(
-                'view' => array(),
-                'edit' => array(),
-            )
-        ))
-        ;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     protected function configureShowFields(ShowMapper $filter)
     {
         $filter
             ->add('id')
+            ->add('name')
             ->add('zone')
         ;
     }
@@ -51,7 +33,7 @@ class TableAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('zone')
+            ->add('name', null, array('required' => false))
         ;
     }
 }

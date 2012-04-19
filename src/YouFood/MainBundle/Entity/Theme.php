@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\ThemeRepository")
+ * @ORM\Table(name="themes")
  */
 class Theme
 {
@@ -33,14 +34,14 @@ class Theme
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Week", mappedBy="theme")
+     * @ORM\OneToMany(targetEntity="Week", mappedBy="theme", cascade={"persist"})
      */
     private $weeks;
 
     /**
      * @var ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Product", mappedBy="themes")
+     * @ORM\ManyToMany(targetEntity="Product", mappedBy="themes", cascade={"persist"})
      */
     private $products;
 

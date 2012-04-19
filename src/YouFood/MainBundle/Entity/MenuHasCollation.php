@@ -5,25 +5,35 @@ namespace YouFood\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * MenuCollation
+ * MenuHasCollation
  *
  * @ORM\Entity()
+ * @ORM\Table(name="menu_has_collation")
  */
-class MenuCollation
+class MenuHasCollation
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
     /**
      * @var Menu
      *
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Menu", inversedBy="menuCollations", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Menu", inversedBy="menuHasCollations", cascade={"persist"})
+     * @ORM\JoinColumn(name="menu_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $menu;
 
     /**
      * @var Collation
      *
-     * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Collation", inversedBy="menuCollations", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="Collation", inversedBy="menuHasCollations")
+     * @ORM\JoinColumn(name="collation_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $collation;
 
@@ -34,9 +44,20 @@ class MenuCollation
      */
     private $position;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->position = 0;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**

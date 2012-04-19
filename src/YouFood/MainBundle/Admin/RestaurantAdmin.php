@@ -30,6 +30,7 @@ class RestaurantAdmin extends Admin
             'actions' => array(
                 'view' => array(),
                 'edit' => array(),
+                'delete' => array(),
             )
         ))
         ;
@@ -54,6 +55,13 @@ class RestaurantAdmin extends Admin
         $formMapper
             ->add('city')
             ->add('address')
+            ->add('zones', 'sonata_type_collection', array(
+                'by_reference' => false,
+            ), array(
+                'edit' => 'inline',
+                'inline' => 'table',
+                'sortable'  => 'position'
+            ))
         ;
     }
 }

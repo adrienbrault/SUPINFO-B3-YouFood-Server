@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\WeekRepository")
+ * @ORM\Table(name="weeks")
  */
 class Week
 {
@@ -39,7 +40,8 @@ class Week
     /**
      * @var Theme
      *
-     * @ORM\ManyToOne(targetEntity="Theme", inversedBy="weeks")
+     * @ORM\ManyToOne(targetEntity="Theme", inversedBy="weeks", cascade={"persist"})
+     * @ORM\JoinColumn(name="theme_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $theme;
 

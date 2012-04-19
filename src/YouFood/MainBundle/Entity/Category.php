@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\CategoryRepository")
+ * @ORM\Table(name="categories")
  */
 class Category
 {
@@ -33,7 +34,7 @@ class Category
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Collation", mappedBy="category")
+     * @ORM\OneToMany(targetEntity="Collation", mappedBy="category", cascade={"persist"})
      */
     private $collations;
 

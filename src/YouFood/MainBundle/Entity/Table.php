@@ -3,6 +3,7 @@
 namespace YouFood\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Table
@@ -24,11 +25,27 @@ class Table
     private $id;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $name;
+
+    /**
      * @var Zone
      *
-     * @ORM\ManyToOne(targetEntity="Zone", inversedBy="tables")
+     * @ORM\ManyToOne(targetEntity="Zone", inversedBy="table", cascade={"persist"})
+     * @ORM\JoinColumn(name="zone_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     private $zone;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+
+    }
 
     /**
      * @return int
@@ -39,19 +56,38 @@ class Table
     }
 
     /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        if (strlen($this->name) == 0) {
+            return (string) $this->getId();
+        }
+
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    /**
      * @param Zone $zone
      */
     public function setZone(Zone $zone)
     {
-        // Update inverse side
-        if (null !== $this->zone) {
-            $this->zone->getTables()->removeElement($this);
-        }
-
-        if (null !== $zone) {
-            $zone->getTables()->add($this);
-        }
-
         $this->zone = $zone;
     }
 

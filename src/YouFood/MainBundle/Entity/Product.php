@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\ProductRepository")
+ * @ORM\Table(name="products")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({

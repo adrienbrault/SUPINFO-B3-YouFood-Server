@@ -11,16 +11,17 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\CollationRepository")
+ * @ORM\Table(name="menus")
  */
 class Menu extends Product
 {
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="MenuCollation", mappedBy="menu", cascade={"persist"}, orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="MenuHasCollation", mappedBy="menu", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"position" = "ASC"})
      */
-    private $menuCollations;
+    private $menuHasCollations;
 
     /**
      * Constructor
@@ -29,33 +30,36 @@ class Menu extends Product
     {
         parent::__construct();
 
-        $this->menuCollations = new ArrayCollection();
+        $this->menuHasCollations = new ArrayCollection();
     }
 
     /**
      * @return ArrayCollection
      */
-    public function getMenuCollations()
+    public function getMenuHasCollations()
     {
-        return $this->menuCollations;
+        return $this->menuHasCollations;
     }
 
     /**
-     * @param ArrayCollection $menuCollations
+     * @param ArrayCollection $menuHasCollations
      */
-    public function setMenuCollations($menuCollations)
+    public function setMenuHasCollations($menuHasCollations)
     {
-        foreach ($menuCollations as $menuCollation) {
-            $menuCollation->setMenu($this);
+        foreach ($menuHasCollations as $menuHasCollation) {
+            $menuHasCollation->setMenu($this);
         }
 
-        $this->menuCollations = $menuCollations;
+        $this->menuHasCollations = $menuHasCollations;
     }
 
-    public function addMenuCollations(MenuCollation $menuCollation)
+    /**
+     * @param MenuHasCollation $menuHasCollation
+     */
+    public function addMenuHasCollations(MenuHasCollation $menuHasCollation)
     {
-        $menuCollation->setMenu($this);
+        $menuHasCollation->setMenu($this);
 
-        $this->menuCollations[] = $menuCollation;
+        $this->menuHasCollations[] = $menuHasCollation;
     }
 }

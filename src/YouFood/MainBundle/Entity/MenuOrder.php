@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\MenuOrderRepository")
+ * @ORM\Table(name="menu_orders")
  */
 class MenuOrder extends ProductOrder
 {
@@ -18,6 +19,7 @@ class MenuOrder extends ProductOrder
      * @var Menu
      *
      * @ORM\ManyToOne(targetEntity="Menu")
+     * @ORM\JoinColumn(name="menu_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $menu;
 

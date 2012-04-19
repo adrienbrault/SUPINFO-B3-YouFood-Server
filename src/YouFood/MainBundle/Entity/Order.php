@@ -33,11 +33,16 @@ class Order
 
     /**
      * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="ProductOrder", mappedBy="order", cascade={"all"}, orphanRemoval=true)
      */
     private $productOrders;
 
     /**
      * @var Restaurant
+     *
+     * @ORM\ManyToOne(targetEntity="Restaurant")
+     * @ORM\JoinColumn(name="restaurant_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $restaurant;
 

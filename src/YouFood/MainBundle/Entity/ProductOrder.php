@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\ProductOrderRepository")
+ * @ORM\Table(name="product_orders")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="discr", type="string")
  * @ORM\DiscriminatorMap({
@@ -34,6 +35,14 @@ class ProductOrder
      * @ORM\Column(type="float")
      */
     private $price;
+
+    /**
+     * @var Order
+     *
+     * @ORM\ManyToOne(targetEntity="Order", inversedBy="productOrders", cascade={"persist"})
+     * @ORM\JoinColumn(name="order_id", referencedColumnName="id", onDelete="CASCADE")
+     */
+    private $order;
 
     /**
      * @return int

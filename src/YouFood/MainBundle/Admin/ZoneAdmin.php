@@ -21,7 +21,7 @@ class ZoneAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('id')
+            ->addIdentifier('name')
             ->add('restaurant')
 
         // add custom action links
@@ -29,6 +29,7 @@ class ZoneAdmin extends Admin
             'actions' => array(
                 'view' => array(),
                 'edit' => array(),
+                'delete' => array(),
             )
         ))
         ;
@@ -41,8 +42,8 @@ class ZoneAdmin extends Admin
     {
         $filter
             ->add('id')
+            ->add('name')
             ->add('restaurant')
-            ->add('tables')
         ;
     }
 
@@ -52,8 +53,19 @@ class ZoneAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('restaurant')
-            ->add('tables')
+            ->add('name')
         ;
+
+        if (null === $this->getParentFieldDescription()) {
+            $formMapper
+                ->add('tables', 'sonata_type_collection', array(
+                    'by_reference' => false,
+                ), array(
+                    'edit' => 'inline',
+                    'inline' => 'table',
+                    'sortable'  => 'position'
+                ))
+            ;
+        }
     }
 }

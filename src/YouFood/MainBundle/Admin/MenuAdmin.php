@@ -29,6 +29,7 @@ class MenuAdmin extends Admin
                 'actions' => array(
                     'view' => array(),
                     'edit' => array(),
+                    'delete' => array(),
                 )
             ))
         ;
@@ -54,7 +55,7 @@ class MenuAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('price')
-            ->add('menuCollations', 'sonata_type_collection', array(
+            ->add('menuHasCollations', 'sonata_type_collection', array(
                 'by_reference' => false,
             ), array(
                 'edit' => 'inline',

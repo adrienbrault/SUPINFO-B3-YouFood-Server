@@ -10,7 +10,7 @@ parameters:
     you_food.admin.restaurant.class: YouFood\MainBundle\Admin\RestaurantAdmin
     you_food.admin.table.class: YouFood\MainBundle\Admin\TableAdmin
     you_food.admin.zone.class: YouFood\MainBundle\Admin\ZoneAdmin
-    you_food.admin.menu_collation.class: YouFood\MainBundle\Admin\MenuCollationAdmin
+    you_food.admin.menu_has_collation.class: YouFood\MainBundle\Admin\MenuHasCollationAdmin
 
 services:
     you_food.admin.category:
@@ -121,7 +121,7 @@ services:
         calls:
           - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
-          - { name: sonata.admin, manager_type: orm, group: you_food.management, label: Table }
+          - { name: sonata.admin, manager_type: orm, label: Table }
 
     you_food.admin.zone:
         class: %you_food.admin.zone.class%
@@ -134,13 +134,13 @@ services:
         tags:
           - { name: sonata.admin, manager_type: orm, group: you_food.management, label: Zone }
 
-    you_food.admin.menu_collation:
-        class: %you_food.admin.menu_collation.class%
+    you_food.admin.menu_has_collation:
+        class: %you_food.admin.menu_has_collation.class%
         arguments:
           - ~
-          - YouFood\MainBundle\Entity\MenuCollation
+          - YouFood\MainBundle\Entity\MenuHasCollation
           - SonataAdminBundle:CRUD
         calls:
           - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
-          - { name: sonata.admin, manager_type: orm, label: MenuCollation }
+          - { name: sonata.admin, manager_type: orm, label: MenuHasCollation }

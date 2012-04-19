@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\ZoneRepository")
+ * @ORM\Table(name="zones")
  */
 class Zone
 {
@@ -26,16 +27,32 @@ class Zone
     /**
      * @var Restaurant
      *
-     * @ORM\ManyToOne(targetEntity="Restaurant", inversedBy="zones")
+     * @ORM\ManyToOne(targetEntity="Restaurant", inversedBy="zones", cascade={"persist"})
+     * @ORM\JoinColumn(name="restaurant_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $restaurant;
 
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Table", mappedBy="zone")
+     * @ORM\OneToMany(targetEntity="Table", mappedBy="zone", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $tables;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $name;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+
+    }
 
     /**
      * @return int
@@ -50,15 +67,6 @@ class Zone
      */
     public function setRestaurant(Restaurant $restaurant)
     {
-        // Update inverse side
-        if (null !== $this->restaurant) {
-            $this->restaurant->getZones()->removeElement($this);
-        }
-
-        if (null !== $restaurant) {
-            $restaurant->getZones()->add($this);
-        }
-
         $this->restaurant = $restaurant;
     }
 
@@ -75,7 +83,19 @@ class Zone
      */
     public function __toString()
     {
-        return (string) $this->getId();
+        return $this->getName();
+    }
+
+    /**
+     * @param ArrayCollection $tables
+     */
+    public function setTables($tables)
+    {
+        foreach ($tables as $table) {
+            $table->setZone($this);
+        }
+
+        $this->tables = $tables;
     }
 
     /**
@@ -84,5 +104,35 @@ class Zone
     public function getTables()
     {
         return $this->tables;
+    }
+
+    /**
+     * @param Table $table
+     */
+    public function addTables(Table $table)
+    {
+        $table->setZone($this);
+
+        $this->tables[] = $table;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        if (strlen($this->name) == 0) {
+            return (string) $this->getId();
+        }
+
+        return $this->name;
     }
 }

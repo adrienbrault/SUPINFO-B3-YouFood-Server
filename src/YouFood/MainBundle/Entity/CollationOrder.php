@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\CollationOrderRepository")
+ * @ORM\Table(name="collation_orders")
  */
 class CollationOrder extends ProductOrder
 {
@@ -17,6 +18,7 @@ class CollationOrder extends ProductOrder
      * @var Collation
      *
      * @ORM\ManyToOne(targetEntity="Collation")
+     * @ORM\JoinColumn(name="collation_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $collation;
 

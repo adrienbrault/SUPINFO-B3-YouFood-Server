@@ -11,6 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\RestaurantRepository")
+ * @ORM\Table(name="restaurants")
  */
 class Restaurant
 {
@@ -40,7 +41,7 @@ class Restaurant
     /**
      * @var ArrayCollection
      *
-     * @ORM\OneToMany(targetEntity="Zone", mappedBy="restaurant")
+     * @ORM\OneToMany(targetEntity="Zone", mappedBy="restaurant", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $zones;
 
@@ -98,6 +99,32 @@ class Restaurant
     public function getZones()
     {
         return $this->zones;
+    }
+
+    /**
+     * @param ArrayCollection $zones
+     */
+    public function setZones($zones)
+    {
+        if (is_array($zones)) {
+            $zones = new ArrayCollection($zones);
+        }
+
+        foreach ($zones as $zone) {
+            $zone->setRestaurant($this);
+        }
+
+        $this->zones = $zones;
+    }
+
+    /**
+     * @param Zone $zone
+     */
+    public function addZones(Zone $zone)
+    {
+        $zone->setRestaurant($this);
+
+        $this->zones[] = $zone;
     }
 
     /**
