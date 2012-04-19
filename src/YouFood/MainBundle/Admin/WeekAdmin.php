@@ -24,6 +24,8 @@ class WeekAdmin extends Admin
             ->addIdentifier('name')
             ->add('year')
             ->add('weekNumber')
+            ->add('dateStart', 'datetime')
+            ->add('dateEnd', 'datetime')
             ->add('theme')
 
         // add custom action links
@@ -44,6 +46,8 @@ class WeekAdmin extends Admin
         $filter
             ->add('year')
             ->add('weekNumber')
+            ->add('dateStart', 'datetime')
+            ->add('dateEnd', 'datetime')
             ->add('theme')
         ;
     }
@@ -56,7 +60,18 @@ class WeekAdmin extends Admin
         $formMapper
             ->add('year')
             ->add('weekNumber')
-            ->add('theme')
+            ->add('theme', null, array('empty_value' => 'No theme', 'required' => false))
+        ;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add('year')
+            ->add('weekNumber')
         ;
     }
 }

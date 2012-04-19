@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @ORM\Entity(repositoryClass="YouFood\MainBundle\Repository\WeekRepository")
- * @ORM\Table(name="weeks")
+ * @ORM\Table(name="weeks", uniqueConstraints={@ORM\UniqueConstraint(name="year_week_number_unique", columns={"year", "week_number"})})
  */
 class Week
 {
@@ -33,7 +33,7 @@ class Week
     /**
      * @var int
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", name="week_number")
      */
     private $weekNumber;
 
@@ -132,5 +132,44 @@ class Week
     public function __toString()
     {
         return $this->getName();
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateStart()
+    {
+        return $this->getDayOfWeekDate(0);
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateEnd()
+    {
+        return $this->getDayOfWeekDate(6);
+    }
+
+    /**
+     * @link http://tzzz.wordpress.com/2006/08/14/8/
+     *
+     * @param int $day
+     *
+     * @return \DateTime
+     */
+    protected function getDayOfWeekDate($day = 0)
+    {
+        $day = min($day, 6);
+        $day = max($day, 0);
+
+        // Count from '0104' because January 4th is always in week 1 (according to ISO 8601).
+        $timestamp = strtotime(sprintf('%d0104 +%d weeks', $this->getYear(), ($this->getWeekNumber() - 1)));
+
+        // Get the time of the first day of the week (Monday -> Sunday)
+        $mondayTimestamp = strtotime(sprintf('-%d days', date('w', $timestamp) - 2), $timestamp);
+
+        $dayOfWeekTimestamp = strtotime(sprintf('+%d days', $day), $mondayTimestamp);
+
+        return new \DateTime(sprintf('@%d', $dayOfWeekTimestamp));
     }
 }
