@@ -5,6 +5,7 @@
 /web/uploads/*
 /web/bundles/*
 /app/bootstrap.php.cache
+/app/config/parameters.yml
 
 # Composer
 /composer.phar
