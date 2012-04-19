@@ -23,6 +23,7 @@ class ZoneAdmin extends Admin
         $listMapper
             ->addIdentifier('name')
             ->add('restaurant')
+            ->add('waiter')
 
         // add custom action links
             ->add('_action', 'actions', array(
@@ -44,6 +45,7 @@ class ZoneAdmin extends Admin
             ->add('id')
             ->add('name')
             ->add('restaurant')
+            ->add('waiter')
         ;
     }
 
@@ -54,6 +56,7 @@ class ZoneAdmin extends Admin
     {
         $formMapper
             ->add('name')
+            ->add('waiter', 'sonata_type_model', array(), array('edit' => 'list'))
         ;
 
         if (null === $this->getParentFieldDescription()) {
