@@ -100,12 +100,12 @@ sonata_admin:
         groups:
             you_food.menu:
                 label: Menu
-                items: ~
             you_food.order:
                 label: Order
-                items: ~
             you_food.management:
                 label: Management
+            sonata_media:
+                label: Media
                 items:
 
 sonata_doctrine_orm_admin: ~
