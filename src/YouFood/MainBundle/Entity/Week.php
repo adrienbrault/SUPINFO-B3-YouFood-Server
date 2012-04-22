@@ -3,6 +3,7 @@
 namespace YouFood\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Week
@@ -27,6 +28,8 @@ class Week
      * @var int
      *
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank()
      */
     private $year;
 
@@ -34,6 +37,8 @@ class Week
      * @var int
      *
      * @ORM\Column(type="integer", name="week_number")
+     *
+     * @Assert\NotBlank()
      */
     private $weekNumber;
 

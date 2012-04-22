@@ -20,6 +20,8 @@ class Menu extends Product
      *
      * @ORM\OneToMany(targetEntity="MenuHasCollation", mappedBy="menu", cascade={"persist", "remove"}, orphanRemoval=true)
      * @ORM\OrderBy({"position" = "ASC"})
+     *
+     * @Assert\NotBlank()
      */
     private $menuHasCollations;
 

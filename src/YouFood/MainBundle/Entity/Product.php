@@ -4,6 +4,7 @@ namespace YouFood\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Product
@@ -41,6 +42,8 @@ abstract class Product
      * @var string
      *
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank()
      */
     private $name;
 
@@ -48,6 +51,9 @@ abstract class Product
      * @var float
      *
      * @ORM\Column(type="float")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Min(limit="0")
      */
     private $price;
 

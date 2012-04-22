@@ -4,6 +4,7 @@ namespace YouFood\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Application\Sonata\MediaBundle\Entity\Media;
 
@@ -22,6 +23,8 @@ class Collation extends Product
      *
      * @ORM\ManyToOne(targetEntity="Category", inversedBy="collations")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
+     *
+     * @Assert\NotBlank()
      */
     private $category;
 

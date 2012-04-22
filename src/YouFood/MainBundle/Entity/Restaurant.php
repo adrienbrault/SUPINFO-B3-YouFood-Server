@@ -4,6 +4,7 @@ namespace YouFood\MainBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Restaurant
@@ -28,6 +29,8 @@ class Restaurant
      * @var string
      *
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank()
      */
     private $city;
 
@@ -35,6 +38,8 @@ class Restaurant
      * @var string
      *
      * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank()
      */
     private $address;
 
