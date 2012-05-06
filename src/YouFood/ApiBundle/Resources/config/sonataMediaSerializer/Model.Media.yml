@@ -1,0 +1,11 @@
+Sonata\MediaBundle\Model\Media:
+    xml_root_name: media
+    properties:
+        name:
+            groups: [media_detail]
+        description:
+            groups: [media_detail]
+        width:
+            groups: [media_detail]
+        height:
+            groups: [media_detail]

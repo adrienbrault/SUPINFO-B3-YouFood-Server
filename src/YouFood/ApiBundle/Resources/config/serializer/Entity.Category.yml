@@ -1,0 +1,9 @@
+YouFood\MainBundle\Entity\Category:
+    xml_root_name: category
+    properties:
+        id:
+            groups: [id]
+        name:
+            groups: [category_list, category_detail]
+        collations:
+            groups: [category_detail]

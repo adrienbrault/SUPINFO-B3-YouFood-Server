@@ -1,0 +1,7 @@
+YouFood\MainBundle\Entity\Menu:
+    xml_root_name: menu
+    properties:
+        collations:
+            groups: [menu_detail]
+    callback_methods:
+        pre_serialize: [preSerialize]

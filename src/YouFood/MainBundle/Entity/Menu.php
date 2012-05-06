@@ -27,6 +27,11 @@ class Menu extends Product
     private $menuHasCollations;
 
     /**
+     * @var array Array used by serialization
+     */
+    private $collations;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -64,5 +69,28 @@ class Menu extends Product
         $menuHasCollation->setMenu($this);
 
         $this->menuHasCollations[] = $menuHasCollation;
+    }
+
+    /**
+     * @param array $collations
+     */
+    public function setCollations($collations)
+    {
+        $this->collations = $collations;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCollations()
+    {
+        return $this->collations;
+    }
+
+    public function preSerialize()
+    {
+        $this->collations = array_map(function ($menuHasCollation) {
+            return $menuHasCollation->getCollation();
+        }, $this->getMenuHasCollations()->getValues());
     }
 }

@@ -1,0 +1,59 @@
+<?php
+
+namespace YouFood\ApiBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+use FOS\RestBundle\Controller\Annotations\Prefix;
+use FOS\RestBundle\Controller\Annotations\NamePrefix;
+use FOS\RestBundle\View\View;
+
+use YouFood\MainBundle\Repository\CollationRepository;
+
+/**
+ * CollationController
+ *
+ * @author Adrien Brault <adrien.brault@gmail.com>
+ *
+ * @NamePrefix("youfood_api_rest_")
+ */
+class CollationController extends Controller
+{
+    /**
+     * @return View
+     */
+    public function getCollationsAction()
+    {
+        $view = View::create($this->getRepository()->findAll());
+        $view->setSerializerGroups(array('id', 'product_list', 'collation_list'));
+
+        return $view;
+    }
+
+    /**
+     * @param integer $id
+     *
+     * @return View
+     */
+    public function getCollationAction($id)
+    {
+        $collation = $this->getRepository()->find($id);
+
+        if (null === $collation) {
+            throw $this->createNotFoundException('Collation not found.');
+        }
+
+        $view = View::create($collation);
+        $view->setSerializerGroups(array('id', 'product_detail', 'collation_detail', 'media_detail'));
+
+        return $view;
+    }
+
+    /**
+     * @return CollationRepository
+     */
+    protected function getRepository()
+    {
+        return $this->get('doctrine')->getEntityManager()->getRepository('YouFoodMainBundle:Collation');
+    }
+}

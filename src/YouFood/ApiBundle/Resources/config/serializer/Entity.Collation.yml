@@ -1,0 +1,7 @@
+YouFood\MainBundle\Entity\Collation:
+    xml_root_name: collation
+    properties:
+        category:
+            groups: [collation_detail]
+        image:
+            groups: [collation_detail]

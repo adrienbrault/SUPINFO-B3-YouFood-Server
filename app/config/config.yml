@@ -16,10 +16,15 @@ framework:
     session:
         auto_start:     true
 
+sensio_framework_extra:
+    view:    { annotations: false }
+    router:  { annotations: true }
+
 # Twig Configuration
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
 
 # Assetic Configuration
 assetic:
@@ -154,5 +159,36 @@ sonata_user:
     class:
         user:   %application.user.class%
         group:  %application.group.class%
+
+fos_rest:
+    routing_loader:
+        default_format: json
+    exception:
+        codes:
+            'Doctrine\ORM\NoResultException': 404
+
+jms_serializer:
+    handlers:
+        object_based: true
+
+    property_naming:
+        separator:  _
+        lower_case: true
+
+    metadata:
+        auto_detection: false
+
+        # if you don't want to use auto-detection, you can also define the
+        # namespace prefix and the corresponding directory explicitly
+        directories:
+            youfood-api:
+                namespace_prefix: 'YouFood\MainBundle'
+                path: '@YouFoodApiBundle/Resources/config/serializer'
+            application-sonata-media:
+                namespace_prefix: 'Application\Sonata\MediaBundle'
+                path: '@YouFoodApiBundle/Resources/config/applicationSonataMediaSerializer'
+            sonata-media:
+                namespace_prefix: 'Sonata\MediaBundle'
+                path: '@YouFoodApiBundle/Resources/config/sonataMediaSerializer'
 
 you_food_main: ~

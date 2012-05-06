@@ -1,0 +1,11 @@
+YouFood\MainBundle\Entity\Theme:
+    xml_root_name: theme
+    properties:
+        id:
+            groups: [id]
+        name:
+            groups: [theme_list, theme_detail]
+        weeks:
+            groups: [theme_detail]
+        products:
+            groups: [theme_detail]

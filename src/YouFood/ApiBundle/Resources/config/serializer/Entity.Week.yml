@@ -1,0 +1,11 @@
+YouFood\MainBundle\Entity\Week:
+    xml_root_name: week
+    properties:
+        id:
+            groups: [id]
+        year:
+            groups: [week_list, week_detail]
+        weekNumber:
+            groups: [week_list, week_detail]
+        themes:
+            groups: [week_list, week_detail]

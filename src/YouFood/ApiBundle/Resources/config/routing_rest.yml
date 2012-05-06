@@ -1,0 +1,19 @@
+category:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\CategoryController
+
+collation:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\CollationController
+
+menu:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\MenuController
+
+theme:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\ThemeController
+
+week:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\WeekController

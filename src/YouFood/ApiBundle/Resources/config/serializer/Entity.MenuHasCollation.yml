@@ -1,0 +1,9 @@
+YouFood\MainBundle\Entity\MenuHasCollation:
+    xml_root_name: menu_has_collation
+    properties:
+        id:
+            groups: [id]
+        collation:
+            groups: [menu_detail]
+        menu:
+            groups: [collation_detail]

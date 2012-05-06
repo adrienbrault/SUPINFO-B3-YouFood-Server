@@ -1,0 +1,11 @@
+YouFood\MainBundle\Entity\Product:
+    xml_root_name: product
+    properties:
+        id:
+            groups: [id]
+        themes:
+            groups: [product_detail]
+        name:
+            groups: [product_list, product_detail]
+        price:
+            groups: [product_list, product_detail]
