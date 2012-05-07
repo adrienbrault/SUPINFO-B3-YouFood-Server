@@ -57,9 +57,9 @@ doctrine:
                 mappings:
                     YouFoodMainBundle: ~
                     YouFoodUserBundle: ~
+                    YouFoodMediaBundle:
 
                     SonataMediaBundle: ~
-                    ApplicationSonataMediaBundle: ~
 
                     FOSUserBundle: ~
                     SonataUserBundle: ~
@@ -183,13 +183,13 @@ jms_serializer:
         directories:
             youfood-api:
                 namespace_prefix: 'YouFood\MainBundle'
-                path: '@YouFoodApiBundle/Resources/config/serializer'
-            application-sonata-media:
-                namespace_prefix: 'Application\Sonata\MediaBundle'
-                path: '@YouFoodApiBundle/Resources/config/applicationSonataMediaSerializer'
+                path: '@YouFoodApiBundle/Resources/config/serializer/MainBundle'
+            youfood-media:
+                namespace_prefix: 'YouFood\MediaBundle'
+                path: '@YouFoodApiBundle/Resources/config/serializer/MediaBundle'
             sonata-media:
                 namespace_prefix: 'Sonata\MediaBundle'
-                path: '@YouFoodApiBundle/Resources/config/sonataMediaSerializer'
+                path: '@YouFoodApiBundle/Resources/config/serializer/SonataMediaBundle'
 
 nelmio_api_doc:
     name: 'YouFood API'

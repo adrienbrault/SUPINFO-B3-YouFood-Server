@@ -1,4 +1,4 @@
-Application\Sonata\MediaBundle\Entity\Media:
+YouFood\MediaBundle\Entity\Media:
     xml_root_name: media
     properties:
         id:

@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
-use Application\Sonata\MediaBundle\Entity\Media;
+use YouFood\MediaBundle\Entity\Media;
 
 /**
  * Collation
@@ -31,7 +31,7 @@ class Collation extends Product
     /**
      * @var Media
      *
-     * @ORM\ManyToOne(targetEntity="Application\Sonata\MediaBundle\Entity\Media", cascade={"all"})
+     * @ORM\ManyToOne(targetEntity="YouFood\MediaBundle\Entity\Media", cascade={"all"})
      */
     private $image;
 

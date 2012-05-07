@@ -31,9 +31,9 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
 
-            new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new YouFood\MainBundle\YouFoodMainBundle(),
             new YouFood\UserBundle\YouFoodUserBundle(),
+            new YouFood\MediaBundle\YouFoodMediaBundle(),
             new YouFood\ApiBundle\YouFoodApiBundle(),
         );
 
