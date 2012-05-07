@@ -6,7 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Prefix;
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
+use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\View\View;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use YouFood\MainBundle\Repository\ThemeRepository;
 
@@ -21,6 +24,8 @@ class ThemeController extends Controller
 {
     /**
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a collection of themes")
      */
     public function getThemesAction()
     {
@@ -31,9 +36,12 @@ class ThemeController extends Controller
     }
 
     /**
-     * @param integer $id
+     * @param integer $id The theme id
      *
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a theme")
+     * @Route(requirements={"id"="\d+"})
      */
     public function getThemeAction($id)
     {

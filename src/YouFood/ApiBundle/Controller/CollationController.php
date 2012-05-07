@@ -6,7 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Prefix;
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
+use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\View\View;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use YouFood\MainBundle\Repository\CollationRepository;
 
@@ -21,6 +24,8 @@ class CollationController extends Controller
 {
     /**
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a collection of collations")
      */
     public function getCollationsAction()
     {
@@ -31,9 +36,12 @@ class CollationController extends Controller
     }
 
     /**
-     * @param integer $id
+     * @param integer $id The collation id
      *
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a collation")
+     * @Route(requirements={"id"="\d+"})
      */
     public function getCollationAction($id)
     {

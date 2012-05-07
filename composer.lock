@@ -1,5 +1,5 @@
 {
-    "hash": "73dc422e53f7ee16efc6866efa43fe5d",
+    "hash": "4521da1af26e41e8d9ce474f8d080f23",
     "packages": [
         {
             "package": "doctrine/common",
@@ -82,6 +82,11 @@
         {
             "package": "monolog/monolog",
             "version": "1.1.0"
+        },
+        {
+            "package": "nelmio/api-doc-bundle",
+            "version": "dev-master",
+            "source-reference": "3a7bf7ce414f5b819fe12e372e9324c0f790de64"
         },
         {
             "package": "nikic/php-parser",

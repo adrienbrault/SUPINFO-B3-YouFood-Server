@@ -6,7 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Prefix;
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
+use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\View\View;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use YouFood\MainBundle\Repository\MenuRepository;
 
@@ -21,6 +24,8 @@ class MenuController extends Controller
 {
     /**
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a collection of menus")
      */
     public function getMenusAction()
     {
@@ -31,9 +36,12 @@ class MenuController extends Controller
     }
 
     /**
-     * @param string $id
+     * @param string $id The menu id
      *
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a menu")
+     * @Route(requirements={"id"="\d+"})
      */
     public function getMenuAction($id)
     {

@@ -6,7 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Prefix;
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
+use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\View\View;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use YouFood\MainBundle\Repository\CategoryRepository;
 
@@ -21,6 +24,8 @@ class CategoryController extends Controller
 {
     /**
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a collection of categories")
      */
     public function getCategoriesAction()
     {
@@ -31,9 +36,12 @@ class CategoryController extends Controller
     }
 
     /**
-     * @param integer $id
+     * @param integer $id The category id
      *
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a category")
+     * @Route(requirements={"id"="\d+"})
      */
     public function getCategoryAction($id)
     {

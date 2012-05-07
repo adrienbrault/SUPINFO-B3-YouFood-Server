@@ -191,4 +191,7 @@ jms_serializer:
                 namespace_prefix: 'Sonata\MediaBundle'
                 path: '@YouFoodApiBundle/Resources/config/sonataMediaSerializer'
 
+nelmio_api_doc:
+    name: 'YouFood API'
+
 you_food_main: ~

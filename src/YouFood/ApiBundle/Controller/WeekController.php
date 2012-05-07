@@ -6,7 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use FOS\RestBundle\Controller\Annotations\Prefix;
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
+use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\View\View;
+
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use YouFood\MainBundle\Repository\WeekRepository;
 
@@ -21,6 +24,8 @@ class WeekController extends Controller
 {
     /**
      * @return View
+     *
+     * @ApiDoc(resource=true, description="Get a collection of weeks")
      */
     public function getWeeksAction()
     {
@@ -31,9 +36,12 @@ class WeekController extends Controller
     }
 
     /**
-     * @param integer $id
+     * @param integer $id The week id
      *
      * @return View
+     *
+     * @Route(requirements={"id"="\d+"})
+     * @ApiDoc(resource=true, description="Get a week")
      */
     public function getWeekAction($id)
     {

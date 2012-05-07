@@ -31,3 +31,7 @@ youfood_api_rest:
     type: rest
     resource: '@YouFoodApiBundle/Resources/config/routing_rest.yml'
     prefix: /api
+
+NelmioApiDocBundle:
+    resource: '@NelmioApiDocBundle/Resources/config/routing.yml'
+    prefix:   /doc/api
