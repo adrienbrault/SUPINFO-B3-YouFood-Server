@@ -32,8 +32,8 @@ class AppKernel extends Kernel
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
 
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new YouFood\MainBundle\YouFoodMainBundle(),
+            new YouFood\UserBundle\YouFoodUserBundle(),
             new YouFood\ApiBundle\YouFoodApiBundle(),
         );
 

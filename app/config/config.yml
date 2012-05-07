@@ -56,13 +56,13 @@ doctrine:
             default:
                 mappings:
                     YouFoodMainBundle: ~
+                    YouFoodUserBundle: ~
 
                     SonataMediaBundle: ~
                     ApplicationSonataMediaBundle: ~
 
                     FOSUserBundle: ~
                     SonataUserBundle: ~
-                    ApplicationSonataUserBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:

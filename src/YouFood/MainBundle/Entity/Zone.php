@@ -5,7 +5,7 @@ namespace YouFood\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
-use Application\Sonata\UserBundle\Entity\User;
+use YouFood\UserBundle\Entity\User;
 
 /**
  * Zone
@@ -51,7 +51,7 @@ class Zone
     /**
      * @var User
      *
-     * @ORM\ManyToOne(targetEntity="Application\Sonata\UserBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="YouFood\UserBundle\Entity\User")
      * @ORM\JoinColumn(name="restaurant_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $waiter;
