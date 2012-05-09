@@ -1,0 +1,42 @@
+parameters:
+    you_food.api.admin.access_token.class: YouFood\ApiBundle\Admin\AccessTokenAdmin
+    you_food.api.admin.auth_code.class: YouFood\ApiBundle\Admin\AuthCodeAdmin
+    you_food.api.admin.client.class: YouFood\ApiBundle\Admin\ClientAdmin
+    you_food.api.admin.refresh_token.class: YouFood\ApiBundle\Admin\RefreshTokenAdmin
+
+services:
+    you_food.api.admin.access_token:
+        class: %you_food.api.admin.access_token.class%
+        arguments:
+          - ~
+          - YouFood\ApiBundle\Entity\AccessToken
+          - SonataAdminBundle:CRUD
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: you_food.api, label: Access Token }
+
+    you_food.api.admin.auth_code:
+        class: %you_food.api.admin.auth_code.class%
+        arguments:
+          - ~
+          - YouFood\ApiBundle\Entity\AuthCode
+          - SonataAdminBundle:CRUD
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: you_food.api, label: Auth Code }
+
+    you_food.api.admin.client:
+        class: %you_food.api.admin.client.class%
+        arguments:
+          - ~
+          - YouFood\ApiBundle\Entity\Client
+          - SonataAdminBundle:CRUD
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: you_food.api, label: Client }
+
+    you_food.api.admin.refresh_token:
+        class: %you_food.api.admin.refresh_token.class%
+        arguments:
+          - ~
+          - YouFood\ApiBundle\Entity\RefreshToken
+          - SonataAdminBundle:CRUD
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: you_food.api, label: Refresh Token }

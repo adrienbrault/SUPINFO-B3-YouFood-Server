@@ -57,12 +57,15 @@ doctrine:
                 mappings:
                     YouFoodMainBundle: ~
                     YouFoodUserBundle: ~
-                    YouFoodMediaBundle:
+                    YouFoodMediaBundle: ~
+                    YouFoodApiBundle: ~
 
                     SonataMediaBundle: ~
 
                     FOSUserBundle: ~
                     SonataUserBundle: ~
+
+                    FOSOAuthServerBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -114,6 +117,8 @@ sonata_admin:
                 label: Order
             you_food.management:
                 label: Management
+            you_food.api:
+                label: Api
             sonata_media:
                 label: Media
             sonata_user:
@@ -160,6 +165,17 @@ sonata_user:
         user:   %application.user.class%
         group:  %application.group.class%
 
+fos_oauth_server:
+    db_driver: orm
+    client_class:        YouFood\ApiBundle\Entity\Client
+    access_token_class:  YouFood\ApiBundle\Entity\AccessToken
+    refresh_token_class: YouFood\ApiBundle\Entity\RefreshToken
+    auth_code_class:     YouFood\ApiBundle\Entity\AuthCode
+
+    service:
+        options:
+            access_token_lifetime: 86400 # 24h
+
 fos_rest:
     routing_loader:
         default_format: json
@@ -195,3 +211,5 @@ nelmio_api_doc:
     name: 'YouFood API'
 
 you_food_main: ~
+
+you_food_api:
