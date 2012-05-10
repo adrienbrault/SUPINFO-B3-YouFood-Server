@@ -132,6 +132,10 @@ sonata_doctrine_orm_admin: ~
 sonata_media:
     default_context: default
     db_driver: doctrine_orm # or doctrine_mongodb
+    class:
+        media:              YouFood\MediaBundle\Entity\Media
+        gallery:            YouFood\MediaBundle\Entity\Gallery
+        gallery_has_media:  YouFood\MediaBundle\Entity\GalleryHasMedia
     contexts:
         default:  # the default context is mandatory
             providers:
