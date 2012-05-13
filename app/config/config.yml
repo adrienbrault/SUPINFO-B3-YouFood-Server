@@ -11,7 +11,10 @@ framework:
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
-    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    templating:
+        engines: ['twig']
+        #assets_version: SomeVersionScheme
+        assets_base_urls: %assets_base_urls%
     default_locale:  %locale%
     session:
         auto_start:     true
@@ -144,10 +147,9 @@ sonata_media:
             formats:
                 small: { width: 100, quality: 70 }
                 big:   { width: 500, quality: 70 }
-
     cdn:
         server:
-            path: /uploads/media # http://media.sonata-project.org/
+            path: /uploads/media
 
     filesystem:
         local:
@@ -190,6 +192,7 @@ fos_rest:
 jms_serializer:
     handlers:
         object_based: true
+        you_food_api_media: true
 
     property_naming:
         separator:  _

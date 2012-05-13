@@ -16,3 +16,5 @@ parameters:
 
     application.user.class:  YouFood\UserBundle\Entity\User
     application.group.class: YouFood\UserBundle\Entity\Group
+
+    assets_base_urls: ['http://youfoodinc.com']

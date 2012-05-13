@@ -3,3 +3,7 @@ YouFood\MediaBundle\Entity\Media:
     properties:
         id:
             groups: [id]
+        urlSmall:
+            groups: [id] # always
+        urlBig:
+            groups: [id] # always

@@ -25,10 +25,52 @@ class Media extends BaseMedia
     protected $id;
 
     /**
+     * @var string
+     */
+    protected $urlSmall;
+
+    /**
+     * @var string
+     */
+    protected $urlBig;
+
+    /**
      * @return int
      */
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param string $urlBig
+     */
+    public function setUrlBig($urlBig)
+    {
+        $this->urlBig = $urlBig;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrlBig()
+    {
+        return $this->urlBig;
+    }
+
+    /**
+     * @param string $urlSmall
+     */
+    public function setUrlSmall($urlSmall)
+    {
+        $this->urlSmall = $urlSmall;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrlSmall()
+    {
+        return $this->urlSmall;
     }
 }
