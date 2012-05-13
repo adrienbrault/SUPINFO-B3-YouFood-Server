@@ -20,20 +20,14 @@
         "sonata-project/media-bundle": "dev-master",
         "sonata-project/easy-extends-bundle": "dev-master",
         "knplabs/gaufrette": "*",
-        "imagine/Imagine": "dev-master",
         "kriswallsmith/buzz": "dev-master",
         "sonata-project/user-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "dev-master",
         "friendsofsymfony/rest-bundle": "dev-master",
         "nelmio/api-doc-bundle": "dev-master",
-        "friendsofsymfony/oauth-server-bundle": "dev-master"
+        "friendsofsymfony/oauth-server-bundle": "dev-master",
+        "imagine/imagine": "*"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "http://github.com/adrienbrault/FOSOAuthServerBundle"
-        }
-    ],
     "scripts": {
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
