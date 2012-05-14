@@ -7,5 +7,5 @@ YouFood\MainBundle\Entity\Week:
             groups: [week_list, week_detail]
         weekNumber:
             groups: [week_list, week_detail]
-        themes:
+        theme:
             groups: [week_list, week_detail]
