@@ -4,8 +4,8 @@ YouFood\MainBundle\Entity\Week:
         id:
             groups: [id]
         year:
-            groups: [week_list, week_detail]
+            groups: [week_small, week_full]
         weekNumber:
-            groups: [week_list, week_detail]
+            groups: [week_small, week_full]
         theme:
-            groups: [week_list, week_detail]
+            groups: [week_small, week_full]

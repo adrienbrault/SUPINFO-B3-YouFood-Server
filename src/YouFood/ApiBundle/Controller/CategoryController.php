@@ -30,7 +30,7 @@ class CategoryController extends Controller
     public function getCategoriesAction()
     {
         $view = View::create($this->getRepository()->findAll());
-        $view->setSerializerGroups(array('id', 'category_list'));
+        $view->setSerializerGroups(array('id', 'category_full'));
 
         return $view;
     }
@@ -52,7 +52,7 @@ class CategoryController extends Controller
         }
 
         $view = View::create($category);
-        $view->setSerializerGroups(array('id', 'category_detail'));
+        $view->setSerializerGroups(array('id', 'category_full'));
 
         return $view;
     }

@@ -30,7 +30,7 @@ class ThemeController extends Controller
     public function getThemesAction()
     {
         $view = View::create($this->getRepository()->findAll());
-        $view->setSerializerGroups(array('id', 'theme_list'));
+        $view->setSerializerGroups(array('id', 'theme_full'));
 
         return $view;
     }
@@ -52,7 +52,7 @@ class ThemeController extends Controller
         }
 
         $view = View::create($theme);
-        $view->setSerializerGroups(array('id', 'theme_detail'));
+        $view->setSerializerGroups(array('id', 'theme_full'));
 
         return $view;
     }

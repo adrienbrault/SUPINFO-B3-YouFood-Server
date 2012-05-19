@@ -4,8 +4,8 @@ YouFood\MainBundle\Entity\Theme:
         id:
             groups: [id]
         name:
-            groups: [theme_list, theme_detail]
+            groups: [theme_small, theme_full]
         weeks:
-            groups: [theme_detail]
+            groups: [theme_full]
         products:
-            groups: [theme_detail]
+            groups: [theme_full]

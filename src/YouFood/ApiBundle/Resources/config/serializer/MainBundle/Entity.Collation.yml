@@ -2,6 +2,6 @@ YouFood\MainBundle\Entity\Collation:
     xml_root_name: collation
     properties:
         category:
-            groups: [collation_detail]
+            groups: [collation_full]
         image:
-            groups: [collation_detail]
+            groups: [collation_full]

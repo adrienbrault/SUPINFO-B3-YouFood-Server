@@ -30,7 +30,7 @@ class MenuController extends Controller
     public function getMenusAction()
     {
         $view = View::create($this->getRepository()->findAll());
-        $view->setSerializerGroups(array('id', 'product_list', 'menu_list'));
+        $view->setSerializerGroups(array('id', 'product_full', 'menu_full'));
 
         return $view;
     }
@@ -52,7 +52,7 @@ class MenuController extends Controller
         }
 
         $view = View::create($menu);
-        $view->setSerializerGroups(array('id', 'product_detail', 'menu_detail'));
+        $view->setSerializerGroups(array('id', 'product_full', 'menu_full'));
 
         return $view;
     }

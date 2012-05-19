@@ -4,6 +4,6 @@ YouFood\MainBundle\Entity\Category:
         id:
             groups: [id]
         name:
-            groups: [category_list, category_detail]
+            groups: [category_small, category_full]
         collations:
-            groups: [category_detail]
+            groups: [category_full]

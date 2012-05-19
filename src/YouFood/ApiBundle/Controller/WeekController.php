@@ -30,7 +30,7 @@ class WeekController extends Controller
     public function getWeeksAction()
     {
         $view = View::create($this->getRepository()->findAll());
-        $view->setSerializerGroups(array('id', 'week_list'));
+        $view->setSerializerGroups(array('id', 'week_full'));
 
         return $view;
     }
@@ -52,7 +52,7 @@ class WeekController extends Controller
         }
 
         $view = View::create($week);
-        $view->setSerializerGroups(array('id', 'week_detail'));
+        $view->setSerializerGroups(array('id', 'week_full'));
 
         return $view;
     }

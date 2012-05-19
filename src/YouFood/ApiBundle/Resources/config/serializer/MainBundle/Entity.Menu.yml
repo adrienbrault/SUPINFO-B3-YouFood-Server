@@ -2,6 +2,6 @@ YouFood\MainBundle\Entity\Menu:
     xml_root_name: menu
     properties:
         collations:
-            groups: [menu_detail]
+            groups: [menu_full]
     callback_methods:
         pre_serialize: [preSerialize]

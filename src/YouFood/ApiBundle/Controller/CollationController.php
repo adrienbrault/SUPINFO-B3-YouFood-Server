@@ -30,7 +30,7 @@ class CollationController extends Controller
     public function getCollationsAction()
     {
         $view = View::create($this->getRepository()->findAll());
-        $view->setSerializerGroups(array('id', 'product_list', 'collation_list'));
+        $view->setSerializerGroups(array('id', 'product_full', 'collation_full'));
 
         return $view;
     }
@@ -52,7 +52,7 @@ class CollationController extends Controller
         }
 
         $view = View::create($collation);
-        $view->setSerializerGroups(array('id', 'product_detail', 'collation_detail', 'media_detail'));
+        $view->setSerializerGroups(array('id', 'product_full', 'collation_full', 'media_full'));
 
         return $view;
     }

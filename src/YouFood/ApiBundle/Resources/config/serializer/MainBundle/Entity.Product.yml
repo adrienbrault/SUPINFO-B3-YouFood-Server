@@ -4,8 +4,8 @@ YouFood\MainBundle\Entity\Product:
         id:
             groups: [id]
         themes:
-            groups: [product_detail]
+            groups: [product_full]
         name:
-            groups: [product_list, product_detail]
+            groups: [product_small, product_full]
         price:
-            groups: [product_list, product_detail]
+            groups: [product_list, product_full]

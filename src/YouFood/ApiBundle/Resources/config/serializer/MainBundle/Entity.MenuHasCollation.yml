@@ -4,6 +4,6 @@ YouFood\MainBundle\Entity\MenuHasCollation:
         id:
             groups: [id]
         collation:
-            groups: [menu_detail]
+            groups: [menu_full]
         menu:
-            groups: [collation_detail]
+            groups: [collation_full]
