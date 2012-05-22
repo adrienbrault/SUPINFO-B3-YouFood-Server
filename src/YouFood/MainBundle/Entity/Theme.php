@@ -6,6 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
+use YouFood\MediaBundle\Entity\Media;
+
 /**
  * Theme
  *
@@ -47,6 +49,13 @@ class Theme
      * @ORM\ManyToMany(targetEntity="Product", mappedBy="themes", cascade={"persist"})
      */
     private $products;
+
+    /**
+     * @var Media
+     *
+     * @ORM\ManyToOne(targetEntity="YouFood\MediaBundle\Entity\Media", cascade={"all"})
+     */
+    private $image;
 
     /**
      * Constructor
@@ -105,6 +114,22 @@ class Theme
         $this->products[] = $product;
 
         $product->getThemes()->add($this); // Update inverse side
+    }
+
+    /**
+     * @param Media $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    /**
+     * @return Media
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     /**

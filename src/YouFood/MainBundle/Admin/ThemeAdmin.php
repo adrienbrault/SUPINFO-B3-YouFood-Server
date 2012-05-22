@@ -41,6 +41,7 @@ class ThemeAdmin extends Admin
     {
         $filter
             ->add('name')
+            ->add('image')
         ;
     }
 
@@ -51,6 +52,7 @@ class ThemeAdmin extends Admin
     {
         $formMapper
             ->add('name')
+            ->add('image', 'sonata_type_model', array(), array('edit' => 'list', 'link_parameters' => array('context' => 'default')));
         ;
     }
 }

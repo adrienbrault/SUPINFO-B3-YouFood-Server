@@ -9,3 +9,5 @@ YouFood\MainBundle\Entity\Theme:
             groups: [theme_full]
         products:
             groups: [theme_full]
+        image:
+            groups: [theme_full]
