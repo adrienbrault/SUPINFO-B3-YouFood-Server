@@ -55,6 +55,7 @@ class MenuAdmin extends Admin
         $formMapper
             ->add('name')
             ->add('price')
+            ->add('themes', null, array('required' => false, 'expanded' => true))
             ->add('menuHasCollations', 'sonata_type_collection', array(
                 'by_reference' => false,
             ), array(
