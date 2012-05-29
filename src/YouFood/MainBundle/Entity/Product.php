@@ -82,6 +82,18 @@ abstract class Product
     }
 
     /**
+     * @param \Traversable $themes
+     */
+    public function setThemes($themes)
+    {
+        $this->themes->clear();
+
+        foreach ($themes as $theme) {
+            $this->themes->add($theme);
+        }
+    }
+
+    /**
      * @param string $name
      */
     public function setName($name)
