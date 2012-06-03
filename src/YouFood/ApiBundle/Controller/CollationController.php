@@ -62,6 +62,6 @@ class CollationController extends Controller
      */
     protected function getRepository()
     {
-        return $this->get('doctrine')->getEntityManager()->getRepository('YouFoodMainBundle:Collation');
+        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Collation');
     }
 }

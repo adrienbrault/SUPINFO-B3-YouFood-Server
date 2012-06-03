@@ -62,6 +62,6 @@ class CategoryController extends Controller
      */
     protected function getRepository()
     {
-        return $this->get('doctrine')->getEntityManager()->getRepository('YouFoodMainBundle:Category');
+        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Category');
     }
 }

@@ -62,6 +62,6 @@ class WeekController extends Controller
      */
     protected function getRepository()
     {
-        return $this->get('doctrine')->getEntityManager()->getRepository('YouFoodMainBundle:Week');
+        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Week');
     }
 }

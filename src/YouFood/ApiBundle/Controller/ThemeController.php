@@ -62,6 +62,6 @@ class ThemeController extends Controller
      */
     protected function getRepository()
     {
-        return $this->get('doctrine')->getEntityManager()->getRepository('YouFoodMainBundle:Theme');
+        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Theme');
     }
 }

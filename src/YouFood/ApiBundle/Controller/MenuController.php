@@ -62,6 +62,6 @@ class MenuController extends Controller
      */
     protected function getRepository()
     {
-        return $this->get('doctrine')->getEntityManager()->getRepository('YouFoodMainBundle:Menu');
+        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Menu');
     }
 }
