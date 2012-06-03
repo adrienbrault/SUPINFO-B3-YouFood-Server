@@ -43,7 +43,6 @@ class MenuAdmin extends Admin
         $filter
             ->add('name')
             ->add('price')
-            ->add('collations')
         ;
     }
 

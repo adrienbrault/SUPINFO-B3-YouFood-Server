@@ -46,6 +46,7 @@ class ZoneAdmin extends Admin
             ->add('name')
             ->add('restaurant')
             ->add('waiter')
+            ->add('tables', 'array')
         ;
     }
 

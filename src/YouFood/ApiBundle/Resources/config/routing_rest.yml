@@ -17,3 +17,7 @@ theme:
 week:
     type:     rest
     resource: YouFood\ApiBundle\Controller\WeekController
+
+order:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\OrderController

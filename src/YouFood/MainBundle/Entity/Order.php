@@ -39,18 +39,19 @@ class Order
     private $productOrders;
 
     /**
-     * @var Restaurant
+     * @var Table
      *
-     * @ORM\ManyToOne(targetEntity="Restaurant")
-     * @ORM\JoinColumn(name="restaurant_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
+     * @ORM\ManyToOne(targetEntity="Table")
+     * @ORM\JoinColumn(name="tables_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
-    private $restaurant;
+    private $table;
 
     /**
      * Constructor
      */
     public function __construct()
     {
+        $this->date = new \DateTime();
         $this->productOrders = new ArrayCollection();
     }
 
@@ -87,18 +88,40 @@ class Order
     }
 
     /**
-     * @param Restaurant $restaurant
+     * @param \Traversable|array $productOrders
      */
-    public function setRestaurant(Restaurant $restaurant)
+    public function setProductOrders($productOrders)
     {
-        $this->restaurant = $restaurant;
+        $this->productOrders->clear();
+
+        foreach ($productOrders as $productOrder) { /** @var $productOrder ProductOrder */
+            $productOrder->setOrder($this);
+            $this->productOrders[] = $productOrder;
+        }
     }
 
     /**
-     * @return Restaurant
+     * @param ProductOrder $productOrder
      */
-    public function getRestaurant()
+    public function addProductsOrders(ProductOrder $productOrder)
     {
-        return $this->restaurant;
+        $productOrder->setOrder($this);
+        $this->productOrders[] = $productOrder;
+    }
+
+    /**
+     * @param Table $table
+     */
+    public function setTable(Table $table)
+    {
+        $this->table = $table;
+    }
+
+    /**
+     * @return Table
+     */
+    public function getTable()
+    {
+        return $this->table;
     }
 }

@@ -1,0 +1,9 @@
+YouFood\MainBundle\Entity\ProductOrder:
+    xml_root_name: product_order
+    properties:
+        id:
+            groups: [id]
+        price:
+            groups: [product_order_small, product_order_full]
+        order:
+            groups: [product_order_small, product_order_full]

@@ -1,0 +1,7 @@
+YouFood\MainBundle\Entity\CollationOrder:
+    xml_root_name: collation_order
+    properties:
+        id:
+            groups: [id]
+        collation:
+            groups: [collation_order_small, collation_order_full]

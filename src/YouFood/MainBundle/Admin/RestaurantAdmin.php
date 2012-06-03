@@ -44,6 +44,7 @@ class RestaurantAdmin extends Admin
         $filter
             ->add('city')
             ->add('address')
+            ->add('zones', 'array')
         ;
     }
 

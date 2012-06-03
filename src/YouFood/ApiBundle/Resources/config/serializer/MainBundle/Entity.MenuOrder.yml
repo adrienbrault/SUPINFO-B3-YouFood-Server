@@ -1,0 +1,9 @@
+YouFood\MainBundle\Entity\MenuOrder:
+    xml_root_name: menu_order
+    properties:
+        id:
+            groups: [id]
+        menu:
+            groups: [menu_order_small, menu_order_full]
+        collations:
+            groups: [menu_order_small, menu_order_full]

@@ -22,7 +22,7 @@ class OrderAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('id')
-            ->add('restaurant')
+            ->add('table')
             ->add('date')
 
         // add custom action links
@@ -41,7 +41,7 @@ class OrderAdmin extends Admin
     {
         $filter
             ->add('id')
-            ->add('restaurant')
+            ->add('table')
             ->add('date')
             ->add('productOrders')
         ;

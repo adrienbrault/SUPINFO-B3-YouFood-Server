@@ -1,0 +1,11 @@
+YouFood\MainBundle\Entity\Order:
+    xml_root_name: order
+    properties:
+        id:
+            groups: [id]
+        date:
+            groups: [order_small, order_full]
+        productOrders:
+            groups: [order_small, order_full]
+        table:
+            groups: [order_small, order_full]

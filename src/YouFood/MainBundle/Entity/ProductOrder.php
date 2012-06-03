@@ -67,4 +67,20 @@ class ProductOrder
     {
         return $this->price;
     }
+
+    /**
+     * @return Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
+    }
+
+    /**
+     * @param Order $order
+     */
+    public function setOrder($order)
+    {
+        $this->order = $order;
+    }
 }
