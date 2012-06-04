@@ -52,7 +52,7 @@ class Zone
      * @var User
      *
      * @ORM\ManyToOne(targetEntity="YouFood\UserBundle\Entity\User")
-     * @ORM\JoinColumn(name="restaurant_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
+     * @ORM\JoinColumn(name="waiter_id", referencedColumnName="id", nullable=true, onDelete="SET NULL")
      */
     private $waiter;
 
