@@ -1,0 +1,9 @@
+YouFood\MainBundle\Entity\Table:
+    xml_root_name: table
+    properties:
+        id:
+            groups: [id]
+        name:
+            groups: [table_small, table_full]
+        zone:
+            groups: [table_small, table_full]

@@ -1,0 +1,3 @@
+Sonata\UserBundle\Entity\BaseUser:
+    xml_root_name: user
+    properties:

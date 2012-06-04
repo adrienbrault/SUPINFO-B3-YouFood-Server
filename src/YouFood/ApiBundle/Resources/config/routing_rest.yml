@@ -21,3 +21,15 @@ week:
 order:
     type:     rest
     resource: YouFood\ApiBundle\Controller\OrderController
+
+restaurant:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\RestaurantController
+
+zone:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\ZoneController
+
+table:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\TableController

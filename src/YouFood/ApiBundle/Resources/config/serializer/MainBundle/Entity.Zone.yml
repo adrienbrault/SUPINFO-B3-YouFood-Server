@@ -1,0 +1,13 @@
+YouFood\MainBundle\Entity\Zone:
+    xml_root_name: zone
+    properties:
+        id:
+            groups: [id]
+        restaurant:
+            groups: [zone_small, zone_full]
+        tables:
+            groups: [zone_small, zone_full]
+        name:
+            groups: [zone_small, zone_full]
+        waiter:
+            groups: [zone_small, zone_full]

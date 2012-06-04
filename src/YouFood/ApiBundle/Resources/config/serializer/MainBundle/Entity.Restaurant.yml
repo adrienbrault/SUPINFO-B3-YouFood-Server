@@ -1,0 +1,11 @@
+YouFood\MainBundle\Entity\Restaurant:
+    xml_root_name: restaurant
+    properties:
+        id:
+            groups: [id]
+        city:
+            groups: [restaurant_full, restaurant_small]
+        address:
+            groups: [restaurant_full, restaurant_small]
+        zones:
+            groups: [restaurant_full, restaurant_small]

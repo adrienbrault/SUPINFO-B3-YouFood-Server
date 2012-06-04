@@ -1,0 +1,5 @@
+YouFood\UserBundle\Entity\User:
+    xml_root_name: user
+    properties:
+        id:
+            groups: [id]

@@ -210,9 +210,18 @@ jms_serializer:
             youfood-media:
                 namespace_prefix: 'YouFood\MediaBundle'
                 path: '@YouFoodApiBundle/Resources/config/serializer/MediaBundle'
+            youfood-user:
+                namespace_prefix: 'YouFood\UserBundle'
+                path: '@YouFoodApiBundle/Resources/config/serializer/UserBundle'
             sonata-media:
                 namespace_prefix: 'Sonata\MediaBundle'
                 path: '@YouFoodApiBundle/Resources/config/serializer/SonataMediaBundle'
+            sonata-user:
+                namespace_prefix: 'Sonata\UserBundle'
+                path: '@YouFoodApiBundle/Resources/config/serializer/SonataUserBundle'
+            fos-user:
+                namespace_prefix: 'FOS\UserBundle'
+                path: '@YouFoodApiBundle/Resources/config/serializer/FOSUserBundle'
 
 nelmio_api_doc:
     name: 'YouFood API'
