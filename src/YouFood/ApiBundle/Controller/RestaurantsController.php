@@ -14,13 +14,13 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use YouFood\MainBundle\Repository\RestaurantRepository;
 
 /**
- * RestaurantController
+ * RestaurantsController
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @NamePrefix("youfood_api_rest_")
  */
-class RestaurantController extends Controller
+class RestaurantsController extends Controller
 {
     /**
      * @return View

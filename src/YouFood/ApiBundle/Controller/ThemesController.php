@@ -11,57 +11,57 @@ use FOS\RestBundle\View\View;
 
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
-use YouFood\MainBundle\Repository\TableRepository;
+use YouFood\MainBundle\Repository\ThemeRepository;
 
 /**
- * TableController
+ * ThemesController
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @NamePrefix("youfood_api_rest_")
  */
-class TableController extends Controller
+class ThemesController extends Controller
 {
     /**
      * @return View
      *
-     * @ApiDoc(resource=true, description="Get a collection of tables")
+     * @ApiDoc(resource=true, description="Get a collection of themes")
      */
-    public function getTablesAction()
+    public function getThemesAction()
     {
         $view = View::create($this->getRepository()->findAll());
-        $view->setSerializerGroups(array('id', 'table_full'));
+        $view->setSerializerGroups(array('id', 'theme_full'));
 
         return $view;
     }
 
     /**
-     * @param string $id The table id
+     * @param integer $id The theme id
      *
      * @return View
      *
-     * @ApiDoc(resource=true, description="Get a table")
+     * @ApiDoc(resource=true, description="Get a theme")
      * @Route(requirements={"id"="\d+"})
      */
-    public function getTableAction($id)
+    public function getThemeAction($id)
     {
-        $table = $this->getRepository()->find($id);
+        $theme = $this->getRepository()->find($id);
 
-        if (null === $table) {
-            throw $this->createNotFoundException('Table not found.');
+        if (null === $theme) {
+            throw $this->createNotFoundException('Theme not found.');
         }
 
-        $view = View::create($table);
-        $view->setSerializerGroups(array('id', 'table_full'));
+        $view = View::create($theme);
+        $view->setSerializerGroups(array('id', 'theme_full'));
 
         return $view;
     }
 
     /**
-     * @return TableRepository
+     * @return ThemeRepository
      */
     protected function getRepository()
     {
-        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Table');
+        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Theme');
     }
 }

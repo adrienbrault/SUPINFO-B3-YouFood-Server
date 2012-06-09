@@ -14,13 +14,13 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use YouFood\MainBundle\Repository\CategoryRepository;
 
 /**
- * CategoryController
+ * CategoriesController
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @NamePrefix("youfood_api_rest_")
  */
-class CategoryController extends Controller
+class CategoriesController extends Controller
 {
     /**
      * @return View

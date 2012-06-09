@@ -25,9 +25,6 @@ class OrderType extends AbstractType
             'class' => 'YouFoodMainBundle:Menu',
             'multiple' => true,
         ));
-        $builder->add('table', 'entity', array(
-            'class' => 'YouFoodMainBundle:Table',
-        ));
     }
 
     /**

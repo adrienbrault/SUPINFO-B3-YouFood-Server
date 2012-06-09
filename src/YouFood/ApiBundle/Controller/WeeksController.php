@@ -11,57 +11,57 @@ use FOS\RestBundle\View\View;
 
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
-use YouFood\MainBundle\Repository\ZoneRepository;
+use YouFood\MainBundle\Repository\WeekRepository;
 
 /**
- * ZoneController
+ * WeeksController
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @NamePrefix("youfood_api_rest_")
  */
-class ZoneController extends Controller
+class WeeksController extends Controller
 {
     /**
      * @return View
      *
-     * @ApiDoc(resource=true, description="Get a collection of zones")
+     * @ApiDoc(resource=true, description="Get a collection of weeks")
      */
-    public function getZonesAction()
+    public function getWeeksAction()
     {
         $view = View::create($this->getRepository()->findAll());
-        $view->setSerializerGroups(array('id', 'zone_full'));
+        $view->setSerializerGroups(array('id', 'week_full'));
 
         return $view;
     }
 
     /**
-     * @param string $id The zone id
+     * @param integer $id The week id
      *
      * @return View
      *
-     * @ApiDoc(resource=true, description="Get a zone")
      * @Route(requirements={"id"="\d+"})
+     * @ApiDoc(resource=true, description="Get a week")
      */
-    public function getZoneAction($id)
+    public function getWeekAction($id)
     {
-        $zone = $this->getRepository()->find($id);
+        $week = $this->getRepository()->find($id);
 
-        if (null === $zone) {
-            throw $this->createNotFoundException('Zone not found.');
+        if (null === $week) {
+            throw $this->createNotFoundException('Week not found.');
         }
 
-        $view = View::create($zone);
-        $view->setSerializerGroups(array('id', 'zone_full'));
+        $view = View::create($week);
+        $view->setSerializerGroups(array('id', 'week_full'));
 
         return $view;
     }
 
     /**
-     * @return ZoneRepository
+     * @return WeekRepository
      */
     protected function getRepository()
     {
-        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Zone');
+        return $this->getDoctrine()->getRepository('YouFoodMainBundle:Week');
     }
 }

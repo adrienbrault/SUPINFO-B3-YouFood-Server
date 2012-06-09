@@ -14,13 +14,13 @@ use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use YouFood\MainBundle\Repository\CollationRepository;
 
 /**
- * CollationController
+ * CollationsController
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
  * @NamePrefix("youfood_api_rest_")
  */
-class CollationController extends Controller
+class CollationsController extends Controller
 {
     /**
      * @return View

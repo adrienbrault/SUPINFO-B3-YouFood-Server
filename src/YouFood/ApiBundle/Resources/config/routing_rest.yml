@@ -1,35 +1,36 @@
-category:
+categories:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\CategoryController
+    resource: YouFood\ApiBundle\Controller\CategoriesController
 
-collation:
+collations:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\CollationController
+    resource: YouFood\ApiBundle\Controller\CollationsController
 
-menu:
+menus:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\MenuController
+    resource: YouFood\ApiBundle\Controller\MenusController
 
-theme:
+themes:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\ThemeController
+    resource: YouFood\ApiBundle\Controller\ThemesController
 
-week:
+weeks:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\WeekController
+    resource: YouFood\ApiBundle\Controller\WeeksController
 
-order:
+restaurants:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\OrderController
+    resource: YouFood\ApiBundle\Controller\RestaurantsController
 
-restaurant:
+zones:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\RestaurantController
+    resource: YouFood\ApiBundle\Controller\ZonesController
 
-zone:
+tables:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\ZoneController
+    resource: YouFood\ApiBundle\Controller\TablesController
 
-table:
+table_orders:
     type:     rest
-    resource: YouFood\ApiBundle\Controller\TableController
+    parent:   tables
+    resource: YouFood\ApiBundle\Controller\TableOrdersController
