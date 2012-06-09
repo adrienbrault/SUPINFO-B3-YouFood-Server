@@ -7,6 +7,7 @@ parameters:
     you_food.admin.collation_order.class: YouFood\MainBundle\Admin\CollationOrderAdmin
     you_food.admin.menu_order.class: YouFood\MainBundle\Admin\MenuOrderAdmin
     you_food.admin.order.class: YouFood\MainBundle\Admin\OrderAdmin
+    you_food.admin.request.class: YouFood\MainBundle\Admin\RequestAdmin
     you_food.admin.restaurant.class: YouFood\MainBundle\Admin\RestaurantAdmin
     you_food.admin.table.class: YouFood\MainBundle\Admin\TableAdmin
     you_food.admin.zone.class: YouFood\MainBundle\Admin\ZoneAdmin
@@ -100,6 +101,17 @@ services:
           - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
         tags:
           - { name: sonata.admin, manager_type: orm, group: you_food.order, label: Order }
+
+    you_food.admin.request:
+        class: %you_food.admin.request.class%
+        arguments:
+          - ~
+          - YouFood\MainBundle\Entity\Request
+          - SonataAdminBundle:CRUD
+        calls:
+          - [ setTranslationDomain, [ YouFood\Admin\MainBundle ] ]
+        tags:
+          - { name: sonata.admin, manager_type: orm, group: you_food.order, label: Request }
 
     you_food.admin.restaurant:
         class: %you_food.admin.restaurant.class%

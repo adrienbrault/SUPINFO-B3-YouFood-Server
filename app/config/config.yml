@@ -53,6 +53,9 @@ doctrine:
         password: %database_password%
         charset:  UTF8
 
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         entity_managers:
@@ -64,11 +67,17 @@ doctrine:
                     YouFoodApiBundle: ~
 
                     SonataMediaBundle: ~
+                    SonataNotificationBundle: ~
 
                     FOSUserBundle: ~
                     SonataUserBundle: ~
 
                     FOSOAuthServerBundle: ~
+
+stof_doctrine_extensions:
+    orm:
+        default:
+            timestampable: true
 
 # Swiftmailer Configuration
 swiftmailer:

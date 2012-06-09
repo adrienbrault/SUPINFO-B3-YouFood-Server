@@ -12,6 +12,7 @@ use FOS\RestBundle\View\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 use YouFood\MainBundle\Repository\TableRepository;
+use YouFood\MainBundle\Entity\Request;
 
 /**
  * TablesController
@@ -55,6 +56,31 @@ class TablesController extends Controller
         $view->setSerializerGroups(array('id', 'table_full'));
 
         return $view;
+    }
+
+    /**
+     * @param int $id The table id
+     *
+     * @return View
+     *
+     * @ApiDoc(description="Request a waiter at a table")
+     * @Route(requirements={"id"="\d+"})
+     */
+    public function patchTableRequestWaiterAction($id)
+    {
+        $table = $this->getRepository()->find($id);
+
+        if (null === $table) {
+            throw $this->createNotFoundException('Table not found.');
+        }
+
+        $request = new Request('waiter');
+        $request->setTable($table);
+        $em = $this->getDoctrine()->getEntityManagerForClass(get_class($request));
+        $em->persist($request);
+        $em->flush();
+
+        return View::create('', 202);
     }
 
     /**
