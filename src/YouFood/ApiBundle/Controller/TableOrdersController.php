@@ -93,7 +93,7 @@ class TableOrdersController extends Controller
                 'id' => $order->getId(),
             ));
         } else {
-            $view = View::create($form, $request->isMethod('POST') ? 422 : 400);
+            $view = View::create($form, 400);
         }
 
         return $view;
