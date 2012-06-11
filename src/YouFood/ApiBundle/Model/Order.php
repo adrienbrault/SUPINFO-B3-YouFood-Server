@@ -98,7 +98,7 @@ class Order
     public function hasEnoughProducts(ExecutionContext $context)
     {
         if ($this->getCollations()->count() == 0 && $this->getMenus()->count() == 0) {
-            $context->addViolation('You must add at least 1 collation or at least 1 menu.');
+            $context->addViolation('You must add at least 1 collation or 1 menu.');
         }
     }
 }

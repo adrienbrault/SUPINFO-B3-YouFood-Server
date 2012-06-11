@@ -1,5 +1,5 @@
 {
-    "hash": "c7c7be545a3fc29df98c8130cdb8249a",
+    "hash": "a622860aedc7dbf47d7446ccbee8e38d",
     "packages": [
         {
             "package": "doctrine/common",
@@ -21,6 +21,11 @@
             "source-reference": "5f66c65c9a8d984899903b54215d0249a45b92d6"
         },
         {
+            "package": "evenement/evenement",
+            "version": "dev-master",
+            "source-reference": "fa966683e7df3e5dd5929d984a44abfbd6bafe8d"
+        },
+        {
             "package": "friendsofsymfony/oauth-server-bundle",
             "version": "dev-master",
             "source-reference": "353daa156eecabb3ad06602776dfe0c10bf82873"
@@ -28,13 +33,13 @@
         {
             "package": "friendsofsymfony/oauth2-php",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
+            "source-reference": "52c15b28f7d63b8bde660ae3a3a796e7454baa6d"
         },
         {
             "package": "friendsofsymfony/oauth2-php",
             "version": "dev-master",
-            "source-reference": "52c15b28f7d63b8bde660ae3a3a796e7454baa6d"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "friendsofsymfony/rest",
@@ -55,6 +60,10 @@
             "package": "gedmo/doctrine-extensions",
             "version": "dev-master",
             "source-reference": "7b6631fdb4537c5bb46ebd3f73fb81fd94115559"
+        },
+        {
+            "package": "guzzle/guzzle",
+            "version": "v2.5.0"
         },
         {
             "package": "imagine/Imagine",
@@ -84,7 +93,7 @@
         {
             "package": "knplabs/knp-menu",
             "version": "1.1.x-dev",
-            "source-reference": "v1.1.1"
+            "source-reference": "v1.1.2"
         },
         {
             "package": "knplabs/knp-menu-bundle",
@@ -93,13 +102,13 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "8c76115503d23340e19b5cf6aa95f86663f7185f"
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "alias-pretty-version": "1.1.x-dev",
-            "alias-version": "1.1.9999999.9999999-dev"
+            "source-reference": "8c76115503d23340e19b5cf6aa95f86663f7185f"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -126,6 +135,32 @@
             "version": "v0.9.1"
         },
         {
+            "package": "pimple/pimple",
+            "version": "dev-master",
+            "source-reference": "5bd96492f13a09210b3f62a8c2c5179716033e2c"
+        },
+        {
+            "package": "pimple/pimple",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "predis/predis",
+            "version": "dev-master",
+            "source-reference": "a75e52cf5ac0236ccc957f524269cd2c867eef2f"
+        },
+        {
+            "package": "predis/predis-async",
+            "version": "dev-master",
+            "source-reference": "444d4bd0b0caa7941ec496ac77a7e6dae32ff689"
+        },
+        {
+            "package": "react/react",
+            "version": "dev-master",
+            "source-reference": "28f73a848cb67e19f06f8e187d976905e0bee573"
+        },
+        {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
             "source-reference": "7d75b222c8e4ead64ff82e5c9b2fa3ba71c70cf0"
@@ -139,6 +174,28 @@
             "package": "sensio/generator-bundle",
             "version": "dev-master",
             "source-reference": "55ad81e65a1023ae07c67075ca49c55556e047bf"
+        },
+        {
+            "package": "silex/silex",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "silex/silex",
+            "version": "dev-master",
+            "source-reference": "481b21ebc93f1e616e2810ab6b6d42ef2658b629"
+        },
+        {
+            "package": "snc/redis-bundle",
+            "version": "dev-master",
+            "source-reference": "dc0e74c069aeda7e11b5bd88ad83b351d1faf36f"
+        },
+        {
+            "package": "snc/redis-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "sonata-project/admin-bundle",
@@ -224,13 +281,13 @@
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/swiftmailer-bridge",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "408eb09f5799d393ddc3d916ec3667857fb3a20d"
         },
         {
             "package": "symfony/swiftmailer-bundle",
@@ -240,13 +297,13 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "6266b72ddc17c4ac3c01fa1b14d3200eab947671"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "7bec0786bea3df875b47ac61a67996a33db7556f"
         },
         {
             "package": "twig/extensions",
@@ -256,7 +313,7 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "018c52fe59479b65920d18a6461edeb312963f9d"
+            "source-reference": "d4511d02b45725a56c8cc49127244bca640c9d13"
         },
         {
             "package": "twig/twig",
@@ -288,6 +345,9 @@
         "friendsofsymfony/rest-bundle": 20,
         "nelmio/api-doc-bundle": 20,
         "friendsofsymfony/oauth-server-bundle": 20,
-        "stof/doctrine-extensions-bundle": 20
+        "stof/doctrine-extensions-bundle": 20,
+        "snc/redis-bundle": 20,
+        "react/react": 20,
+        "predis/predis-async": 20
     }
 }

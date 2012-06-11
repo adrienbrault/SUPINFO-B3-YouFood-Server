@@ -1,0 +1,9 @@
+parameters:
+    you_food.api.listener.redis_publish.class: YouFood\ApiBundle\Listener\RedisPublishListener
+
+services:
+    you_food.api.listener.redis_publish:
+        class: %you_food.api.listener.redis_publish.class%
+        arguments: [@snc_redis.default]
+        tags:
+            - { name: doctrine.event_listener, event: postPersist }

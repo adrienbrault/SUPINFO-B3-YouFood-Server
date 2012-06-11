@@ -79,6 +79,13 @@ stof_doctrine_extensions:
         default:
             timestampable: true
 
+snc_redis:
+    clients:
+        default:
+            type: phpredis
+            alias: default
+            dsn: redis://localhost
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: %mailer_transport%

@@ -21,7 +21,7 @@ class YouFoodApiExtension extends Extension
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
 
-        foreach (array('admin.yml', 'serializer.yml') as $file) {
+        foreach (array('admin.yml', 'serializer.yml', 'services.yml') as $file) {
             $loader->load($file);
         }
     }

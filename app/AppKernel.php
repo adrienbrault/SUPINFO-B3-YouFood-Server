@@ -37,6 +37,8 @@ class AppKernel extends Kernel
             new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
             new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
 
+            new Snc\RedisBundle\SncRedisBundle(),
+
             new YouFood\MainBundle\YouFoodMainBundle(),
             new YouFood\UserBundle\YouFoodUserBundle(),
             new YouFood\MediaBundle\YouFoodMediaBundle(),
