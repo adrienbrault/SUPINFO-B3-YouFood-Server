@@ -200,6 +200,7 @@ fos_oauth_server:
             access_token_lifetime: 86400 # 24h
 
 fos_rest:
+    query_fetcher_listener: force
     routing_loader:
         default_format: json
     exception:

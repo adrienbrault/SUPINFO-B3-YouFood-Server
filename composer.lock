@@ -13,7 +13,7 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "f100a7727b89ab5519ed68a72d29e75eb2c85d8b"
+            "source-reference": "3f5149e09d423a42365d59b9b9df4281262c5ce2"
         },
         {
             "package": "doctrine/orm",
@@ -33,13 +33,13 @@
         {
             "package": "friendsofsymfony/oauth2-php",
             "version": "dev-master",
-            "source-reference": "52c15b28f7d63b8bde660ae3a3a796e7454baa6d"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "friendsofsymfony/oauth2-php",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
+            "source-reference": "52c15b28f7d63b8bde660ae3a3a796e7454baa6d"
         },
         {
             "package": "friendsofsymfony/rest",
@@ -59,7 +59,7 @@
         {
             "package": "gedmo/doctrine-extensions",
             "version": "dev-master",
-            "source-reference": "7b6631fdb4537c5bb46ebd3f73fb81fd94115559"
+            "source-reference": "03165f515adf6db5c5a0714e1127375d7ecdd15e"
         },
         {
             "package": "guzzle/guzzle",
@@ -78,12 +78,7 @@
         {
             "package": "jms/serializer-bundle",
             "version": "dev-master",
-            "source-reference": "fd4e2648dd1c127c2131851af23a7b7ee26a819d"
-        },
-        {
-            "package": "jms/translation-bundle",
-            "version": "dev-master",
-            "source-reference": "019f1032846abec955ef1d2dc2623ecc30477ae3"
+            "source-reference": "231ac2a01b108b66d76c334b602765f7d879f473"
         },
         {
             "package": "knplabs/gaufrette",
@@ -102,7 +97,13 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "8c76115503d23340e19b5cf6aa95f86663f7185f"
+            "source-reference": "d6f89a3170c5280ad554347dc113eb25fdf00ad7"
+        },
+        {
+            "package": "kriswallsmith/assetic",
+            "version": "dev-master",
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "kriswallsmith/buzz",
@@ -119,13 +120,15 @@
             "source-reference": "1077e710e1692e7fbd7256362ea07270a6930bb3"
         },
         {
-            "package": "nikic/php-parser",
-            "version": "v0.9.1"
+            "package": "pimple/pimple",
+            "version": "dev-master",
+            "source-reference": "694448bdd2b7d802517104bdafe1a6f2591506c8"
         },
         {
             "package": "pimple/pimple",
             "version": "dev-master",
-            "source-reference": "5bd96492f13a09210b3f62a8c2c5179716033e2c"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "pimple/pimple",
@@ -166,7 +169,13 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "481b21ebc93f1e616e2810ab6b6d42ef2658b629"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "silex/silex",
+            "version": "dev-master",
+            "source-reference": "aee53c94bca632e629818bde748a68a5e3b11f5e"
         },
         {
             "package": "silex/silex",
@@ -182,7 +191,7 @@
         {
             "package": "sonata-project/admin-bundle",
             "version": "dev-master",
-            "source-reference": "ce646427b778403e76654fdfc958c376faf2fbf4"
+            "source-reference": "280ea9b2124814f9acc8462939992883c734dd81"
         },
         {
             "package": "sonata-project/block-bundle",
@@ -242,13 +251,13 @@
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "d33d54cc8a081b0b85734744936ede1ba230dd64"
+            "alias-pretty-version": "4.1.x-dev",
+            "alias-version": "4.1.9999999.9999999-dev"
         },
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "alias-pretty-version": "4.1.x-dev",
-            "alias-version": "4.1.9999999.9999999-dev"
+            "source-reference": "d33d54cc8a081b0b85734744936ede1ba230dd64"
         },
         {
             "package": "symfony/assetic-bundle",
@@ -285,7 +294,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "0995b1f28b80f91cfef7b3201840aa3dbcc66ae1"
+            "source-reference": "37550d23c65b15f1455cda91cc6d2efc66a7dbd8"
         },
         {
             "package": "twig/extensions",
@@ -295,13 +304,19 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "d4511d02b45725a56c8cc49127244bca640c9d13"
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
             "alias-pretty-version": "1.8.x-dev",
             "alias-version": "1.8.9999999.9999999-dev"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "ca33207bb22fe6365d13bdaf034f936e30b53560"
         }
     ],
     "packages-dev": null,

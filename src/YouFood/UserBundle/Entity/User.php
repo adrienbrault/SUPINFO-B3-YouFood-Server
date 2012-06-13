@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="YouFood\UserBundle\Repository\UserRepository")
  * @ORM\Table(name="fos_user_user")
  */
 class User extends BaseUser

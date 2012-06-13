@@ -34,3 +34,20 @@ table_orders:
     type:     rest
     parent:   tables
     resource: YouFood\ApiBundle\Controller\TableOrdersController
+
+users:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\UsersController
+
+user_tables:
+    type:     rest
+    parent:   users
+    resource: YouFood\ApiBundle\Controller\UserTablesController
+
+orders:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\OrdersController
+
+requests:
+    type:     rest
+    resource: YouFood\ApiBundle\Controller\RequestsController

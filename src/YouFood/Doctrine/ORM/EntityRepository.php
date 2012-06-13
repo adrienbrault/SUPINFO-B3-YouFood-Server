@@ -11,5 +11,17 @@ use Doctrine\ORM\EntityRepository as DoctrineEntityRepository;
  */
 class EntityRepository extends DoctrineEntityRepository
 {
+    /**
+     * @param array $ids An array of ids
+     *
+     * @return array
+     */
+    public function getByIds(array $ids)
+    {
+        $qb = $this->createQueryBuilder('e');
 
+        $qb->andWhere($qb->expr()->in('e.id', $ids));
+
+        return $qb->getQuery()->getResult();
+    }
 }

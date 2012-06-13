@@ -1,0 +1,15 @@
+YouFood\MainBundle\Entity\Request:
+    xml_root_name: request
+    properties:
+        id:
+            groups: [id]
+        table:
+            groups: [request_small, request_full]
+        type:
+            groups: [request_small, request_full]
+        processed:
+            groups: [request_small, request_full]
+        createdAt:
+            groups: [request_small, request_full]
+        updatedAt:
+            groups: [request_small, request_full]

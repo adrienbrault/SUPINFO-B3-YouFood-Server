@@ -27,7 +27,7 @@ class Order
     /**
      * @var \DateTime
      *
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $date;
 
@@ -47,12 +47,28 @@ class Order
     private $table;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $paid;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $served;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->date = new \DateTime();
         $this->productOrders = new ArrayCollection();
+        $this->paid = false;
+        $this->served = false;
     }
 
     /**
@@ -123,5 +139,37 @@ class Order
     public function getTable()
     {
         return $this->table;
+    }
+
+    /**
+     * @param boolean $paid
+     */
+    public function setPaid($paid)
+    {
+        $this->paid = $paid;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getPaid()
+    {
+        return $this->paid;
+    }
+
+    /**
+     * @param boolean $served
+     */
+    public function setServed($served)
+    {
+        $this->served = $served;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getServed()
+    {
+        return $this->served;
     }
 }
