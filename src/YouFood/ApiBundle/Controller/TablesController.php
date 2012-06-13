@@ -66,7 +66,7 @@ class TablesController extends Controller
      * @ApiDoc(description="Request a waiter at a table")
      * @Route(requirements={"id"="\d+"})
      */
-    public function patchTableRequestWaiterAction($id)
+    public function postTableRequestWaiterAction($id)
     {
         $table = $this->getRepository()->find($id);
 
