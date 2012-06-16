@@ -29,6 +29,7 @@ class ServerCommand extends ContainerAwareCommand
     {
         $this
             ->setName('youfood:server')
+            ->addOption('host', null, InputOption::VALUE_OPTIONAL, null, "127.0.0.1")
             ->addOption('port', 'p', InputOption::VALUE_OPTIONAL, null, 16350)
         ;
     }
@@ -49,7 +50,7 @@ class ServerCommand extends ContainerAwareCommand
             $connectionHandler->bindEvents();
         });
 
-        $server->listen($input->getOption('port'));
+        $server->listen($input->getOption('port'), $input->getOption('host'));
         $output->writeln(sprintf('Listening on %d', $input->getOption('port')));
 
         $loop->run();

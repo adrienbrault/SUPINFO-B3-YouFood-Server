@@ -25,9 +25,9 @@ class ConnectionHandler
     protected $redis;
 
     /**
-     * @var string
+     * @var array
      */
-    protected $tableId;
+    protected $tablesIds;
 
     /**
      * @param PredisAsync $redis
@@ -41,6 +41,9 @@ class ConnectionHandler
 
     public function bindEvents()
     {
+        $this->connection->on('connect', function () {
+            echo 'yeah'.PHP_EOL;
+        });
         $this->connection->once('data', array($this, 'onceData'));
     }
 
@@ -51,15 +54,25 @@ class ConnectionHandler
     public function onceData($data, Connection $connection)
     {
         $content = @json_decode($data, true);
-        $this->tableId = is_array($content) && isset($content['table_id']) ? $content['table_id'] : null;
+        $this->tablesIds = is_array($content) && isset($content['tables_ids']) && is_array($content['tables_ids'])
+            ? $content['tables_ids']
+            : null;
 
-        if (empty($this->tableId)) {
+        if (empty($this->tablesIds)) {
+            echo print_r(array(
+                'error' => 'No table id.',
+            ), true).PHP_EOL;
+
             $connection->write(json_encode(array(
                 'error' => 'No table id.',
             )));
 
             return $connection->close();
         }
+
+        echo print_r(array(
+            'content' => $content,
+        ), true).PHP_EOL;
 
         $this->bindRedisSubscribe();
     }
@@ -71,11 +84,10 @@ class ConnectionHandler
 
     public function onRedisConnect()
     {
-        $channels = array(
-            sprintf('tables.%d.orders', $this->tableId),
-            sprintf('tables.%d.requests_waiter', $this->tableId),
-        );
-        $this->redis->subscribe($channels, array($this, 'onRedisData'));
+        foreach ($this->tablesIds as $tableId) {
+            $this->redis->subscribe(sprintf('tables.%d.orders', $tableId), array($this, 'onRedisData'));
+            $this->redis->subscribe(sprintf('tables.%d.requests_waiter', $tableId), array($this, 'onRedisData'));
+        }
     }
 
     /**
