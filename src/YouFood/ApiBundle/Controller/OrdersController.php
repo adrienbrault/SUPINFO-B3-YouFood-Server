@@ -84,7 +84,13 @@ class OrdersController extends Controller
         }
 
         $view = View::create($order);
-        $view->setSerializerGroups(array('id', 'order_full'));
+        $view->setSerializerGroups(array(
+            'id',
+            'order_full',
+            'product_order_full',
+            'collation_order_full',
+            'menu_order_full',
+        ));
 
         return $view;
     }
