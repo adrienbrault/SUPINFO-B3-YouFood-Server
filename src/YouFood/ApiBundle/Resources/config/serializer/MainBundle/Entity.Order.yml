@@ -5,7 +5,9 @@ YouFood\MainBundle\Entity\Order:
             groups: [id]
         date:
             groups: [order_small, order_full]
-        productOrders:
+        collationOrders:
+            groups: [order_small, order_full]
+        menuOrders:
             groups: [order_small, order_full]
         table:
             groups: [order_small, order_full]

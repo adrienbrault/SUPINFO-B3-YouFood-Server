@@ -9,13 +9,16 @@ use Sonata\MediaBundle\Provider\Pool;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use YouFood\MediaBundle\Entity\Media;
+use YouFood\MainBundle\Entity\Order;
+use YouFood\MainBundle\Entity\CollationOrder;
+use YouFood\MainBundle\Entity\MenuOrder;
 
 /**
- * MediaHandler
+ * Handler
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  */
-class MediaHandler implements SerializationHandlerInterface
+class Handler implements SerializationHandlerInterface
 {
     /**
      * @var Pool
@@ -43,6 +46,8 @@ class MediaHandler implements SerializationHandlerInterface
     {
         if ($data instanceof Media) {
             $this->fillMediaUrls($data);
+        } else if ($data instanceof Order) {
+            $this->fillOrderProducts($data);
         }
     }
 
@@ -59,5 +64,19 @@ class MediaHandler implements SerializationHandlerInterface
 
         $media->setUrlSmall($assetsHelper->getUrl($smallPath));
         $media->setUrlBig($assetsHelper->getUrl($bigPath));
+    }
+
+    /**
+     * @param Order $order
+     */
+    public function fillOrderProducts(Order $order)
+    {
+        $order->setCollationOrders($order->getProductOrders()->filter(function($productOrder) {
+            return $productOrder instanceof CollationOrder;
+        })->getValues());
+
+        $order->setMenuOrders($order->getProductOrders()->filter(function($productOrder) {
+            return $productOrder instanceof MenuOrder;
+        })->getValues());
     }
 }

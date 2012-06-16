@@ -210,7 +210,7 @@ fos_rest:
 jms_serializer:
     handlers:
         object_based: true
-        you_food_api_media: true
+        you_food_api: true
 
     property_naming:
         separator:  _

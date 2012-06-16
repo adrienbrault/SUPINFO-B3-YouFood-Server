@@ -56,7 +56,13 @@ class OrdersController extends Controller
         $orders = $this->getRepository()->getNonServedOrdersAtTables($tables, $requestDate);
 
         $view = View::create($orders);
-        $view->setSerializerGroups(array('id', 'order_full'));
+        $view->setSerializerGroups(array(
+            'id',
+            'order_full',
+            'product_order_full',
+            'collation_order_full',
+            'menu_order_full',
+        ));
 
         return $view;
     }

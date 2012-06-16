@@ -6,7 +6,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 use JMS\SerializerBundle\SerializerBundleAwareInterface;
 use JMS\SerializerBundle\DependencyInjection\JMSSerializerExtension;
 
-use YouFood\ApiBundle\DependencyInjection\Factory\MediaHandlerFactory;
+use YouFood\ApiBundle\DependencyInjection\Factory\HandlerFactory;
 
 /**
  * YouFoodApiBundle
@@ -20,6 +20,6 @@ class YouFoodApiBundle extends Bundle implements SerializerBundleAwareInterface
      */
     public function configureSerializerExtension(JMSSerializerExtension $extension)
     {
-        $extension->addHandlerFactory(new MediaHandlerFactory());
+        $extension->addHandlerFactory(new HandlerFactory());
     }
 }

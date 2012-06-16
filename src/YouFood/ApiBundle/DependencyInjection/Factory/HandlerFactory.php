@@ -7,18 +7,18 @@ use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * MediaHandlerFactory
+ * HandlerFactory
  *
  * @author Adrien Brault <adrien.brault@gmail.com>
  */
-class MediaHandlerFactory implements HandlerFactoryInterface
+class HandlerFactory implements HandlerFactoryInterface
 {
     /**
      * {@inheritdoc}
      */
     public function getConfigKey()
     {
-        return 'you_food_api_media';
+        return 'you_food_api';
     }
 
     /**
@@ -42,6 +42,6 @@ class MediaHandlerFactory implements HandlerFactoryInterface
      */
     public function getHandlerId(ContainerBuilder $container, array $config)
     {
-        return 'you_food.api.serializer.handler.media';
+        return 'you_food.api.serializer.handler';
     }
 }

@@ -61,6 +61,16 @@ class Order
     private $served;
 
     /**
+     * @var array
+     */
+    private $collationOrders;
+
+    /**
+     * @var array
+     */
+    private $menuOrders;
+
+    /**
      * Constructor
      */
     public function __construct()
@@ -171,5 +181,37 @@ class Order
     public function getServed()
     {
         return $this->served;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCollationOrders()
+    {
+        return $this->collationOrders;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMenuOrders()
+    {
+        return $this->menuOrders;
+    }
+
+    /**
+     * @param array $collationOrders
+     */
+    public function setCollationOrders($collationOrders)
+    {
+        $this->collationOrders = $collationOrders;
+    }
+
+    /**
+     * @param array $menuOrders
+     */
+    public function setMenuOrders($menuOrders)
+    {
+        $this->menuOrders = $menuOrders;
     }
 }

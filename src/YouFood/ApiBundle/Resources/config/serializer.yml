@@ -1,8 +1,8 @@
 parameters:
-    you_food.api.serializer.handler.media.class: YouFood\ApiBundle\Serializer\MediaHandler
+    you_food.api.serializer.handler.class: YouFood\ApiBundle\Serializer\Handler
 
 services:
-    you_food.api.serializer.handler.media:
-        class: %you_food.api.serializer.handler.media.class%
+    you_food.api.serializer.handler:
+        class: %you_food.api.serializer.handler.class%
         arguments: [@sonata.media.pool, @service_container]
         public: false
