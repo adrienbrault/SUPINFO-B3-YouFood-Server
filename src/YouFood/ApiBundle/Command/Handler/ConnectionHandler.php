@@ -115,7 +115,7 @@ class ConnectionHandler
 
         $this->connection->write(json_encode(array(
             'type' => $matches['type'],
-            'data' => $message,
+            'data' => json_decode($message, true),
         )));
     }
 
