@@ -59,20 +59,12 @@ class ConnectionHandler
             : null;
 
         if (empty($this->tablesIds)) {
-            echo print_r(array(
-                'error' => 'No table id.',
-            ), true).PHP_EOL;
-
             $connection->write(json_encode(array(
                 'error' => 'No table id.',
             )));
 
             return $connection->close();
         }
-
-        echo print_r(array(
-            'content' => $content,
-        ), true).PHP_EOL;
 
         $this->bindRedisSubscribe();
     }
