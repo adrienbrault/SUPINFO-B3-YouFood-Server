@@ -3,6 +3,8 @@
 namespace YouFood\ApiBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 use FOS\RestBundle\Controller\Annotations\NamePrefix;
 use FOS\RestBundle\Controller\Annotations\Route;
@@ -41,6 +43,22 @@ class UsersController extends Controller
         $view->setSerializerGroups(array('id'));
 
         return $view;
+    }
+
+    /**
+     * @ApiDoc(resource=true, description="Get the logged user id.")
+     */
+    public function getUsersMeAction()
+    {
+        $securityContext = $this->get('security.context'); /** @var $securityContext SecurityContextInterface */
+
+        if (!$securityContext->isGranted('ROLE_USER')) {
+            throw new AccessDeniedException();
+        }
+
+        return View::create(array(
+            'id' => $securityContext->getToken()->getUser()->getId(),
+        ));
     }
 
     /**
