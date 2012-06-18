@@ -34,6 +34,28 @@
         "react/react": "dev-master",
         "jms/payment-paypal-bundle" :"dev-master"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jms/payment-core-bundle",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/adrienbrault/JMSPaymentCoreBundle",
+                    "type": "git",
+                    "reference": "unsafe-21-fix"
+                },
+                "require": {
+                    "php": ">=5.3.2",
+                    "symfony/framework-bundle": ">=2.0,<2.2-dev"
+                },
+                "autoload": {
+                    "psr-0": { "JMS\\Payment\\CoreBundle": "" }
+                },
+                "target-dir": "JMS/Payment/CoreBundle"
+            }
+        }
+    ],
     "scripts": {
         "post-install-cmd": [
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",

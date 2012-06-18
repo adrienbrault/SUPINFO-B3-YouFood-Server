@@ -1,5 +1,5 @@
 {
-    "hash": "cda25c7fbacd6211fe9c6cc09035d6ce",
+    "hash": "c9b937b059350dc447b9d4eed806aaf3",
     "packages": [
         {
             "package": "doctrine/common",
@@ -65,7 +65,7 @@
         {
             "package": "gedmo/doctrine-extensions",
             "version": "dev-master",
-            "source-reference": "6f7e281b9ddceea440039cecd7ebe8b347daf816"
+            "source-reference": "5d9bbdb7768d6be2dd3b91ab433ac0c1fe2c586d"
         },
         {
             "package": "guzzle/guzzle",
@@ -90,7 +90,7 @@
         {
             "package": "jms/payment-core-bundle",
             "version": "dev-master",
-            "source-reference": "0241e68039c813fa7f77d08cc038a8e4c5a0f249"
+            "source-reference": "unsafe-21-fix"
         },
         {
             "package": "jms/payment-paypal-bundle",
@@ -203,7 +203,7 @@
         {
             "package": "silex/silex",
             "version": "dev-master",
-            "source-reference": "7e603906cfe860c727f8976896c1041477230e6a"
+            "source-reference": "71310c08fc67a5d4d77086c02373fd2934ae24e6"
         },
         {
             "package": "snc/redis-bundle",
@@ -310,7 +310,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "0b8b76bfef2607a0e99fd28e531ee44d17640e83"
+            "source-reference": "086ff48228e93c7c01b5582fa988d04c28081fa0"
         },
         {
             "package": "twig/extensions",
