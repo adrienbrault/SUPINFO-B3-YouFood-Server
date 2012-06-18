@@ -39,10 +39,15 @@ class AppKernel extends Kernel
 
             new Snc\RedisBundle\SncRedisBundle(),
 
+            new JMS\Payment\CoreBundle\JMSPaymentCoreBundle(),
+            new JMS\Payment\PaypalBundle\JMSPaymentPaypalBundle(),
+
+
             new YouFood\MainBundle\YouFoodMainBundle(),
             new YouFood\UserBundle\YouFoodUserBundle(),
             new YouFood\MediaBundle\YouFoodMediaBundle(),
             new YouFood\ApiBundle\YouFoodApiBundle(),
+            new YouFood\PaymentBundle\YouFoodPaymentBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

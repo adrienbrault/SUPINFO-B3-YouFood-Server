@@ -1,0 +1,9 @@
+parameters:
+    you_food.payment.listener.class: YouFood\PaymentBundle\Listener\PaymentListener
+
+services:
+    you_food.payment.listener:
+        class: %you_food.payment.listener.class%
+        arguments: [@doctrine.orm.entity_manager, @snc_redis.default]
+        tags:
+            - { name: kernel.event_listener, event: payment.state_change, method: onPaymentStateChange }

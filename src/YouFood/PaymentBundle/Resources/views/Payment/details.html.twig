@@ -1,0 +1,9 @@
+<div>
+    Price: {{ order.amount }} €
+</div>
+
+<form action="{{ path("youfood_payment_payment_details", {"id": order.id}) }}" method="POST" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>

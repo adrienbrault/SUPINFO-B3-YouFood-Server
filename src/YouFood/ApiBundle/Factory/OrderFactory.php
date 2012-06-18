@@ -27,6 +27,8 @@ class OrderFactory
      */
     public function create(OrderModel $orderModel)
     {
+        $amount = 0.0;
+
         $collationsOrders = array();
         foreach ($orderModel->getCollations() as $collation) { /** @var $collation Collation */
             $collationOrder = new CollationOrder();
@@ -34,23 +36,21 @@ class OrderFactory
             $collationOrder->setPrice($collation->getPrice());
 
             $collationsOrders[] = $collationOrder;
+            $amount += $collation->getPrice();
         }
 
         $menusOrders = array();
         foreach ($orderModel->getMenus() as $menu) { /** @var $menu Menu */
-            $price = 0.0;
-            foreach ($menu->getMenuHasCollations() as $menuHasCollation) { /** @var $menuHasCollation MenuHasCollation */
-                $price += $menuHasCollation->getCollation()->getPrice();
-            }
-
             $menuOrder = new MenuOrder();
             $menuOrder->setMenu($menu);
-            $menuOrder->setPrice($price);
+            $menuOrder->setPrice($menu->getPrice());
 
             $menusOrders[] = $menuOrder;
+            $amount += $menu->getPrice();
         }
 
         $order = new Order();
+        $order->setAmount($amount);
         $order->setTable($orderModel->getTable());
         foreach (array_merge($collationsOrders, $menusOrders) as $productOrder) { /** @var $productOrder ProductOrder */
             $order->addProductsOrders($productOrder);

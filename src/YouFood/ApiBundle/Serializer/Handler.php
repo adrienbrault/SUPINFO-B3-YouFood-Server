@@ -7,6 +7,7 @@ use JMS\SerializerBundle\Serializer\VisitorInterface;
 
 use Sonata\MediaBundle\Provider\Pool;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Routing\RouterInterface;
 
 use YouFood\MediaBundle\Entity\Media;
 use YouFood\MainBundle\Entity\Order;
@@ -45,16 +46,16 @@ class Handler implements SerializationHandlerInterface
     public function serialize(VisitorInterface $visitor, $data, $type, &$handled)
     {
         if ($data instanceof Media) {
-            $this->fillMediaUrls($data);
+            $this->completeMedia($data);
         } else if ($data instanceof Order) {
-            $this->fillOrderProducts($data);
+            $this->completeOrder($data);
         }
     }
 
     /**
      * @param Media $media
      */
-    public function fillMediaUrls(Media $media)
+    public function completeMedia(Media $media)
     {
         $provider = $this->pool->getProvider($media->getProviderName());
         $assetsHelper = $this->container->get('templating.helper.assets'); /** @var $assetsHelper \Symfony\Component\Templating\Helper\CoreAssetsHelper */
@@ -69,7 +70,7 @@ class Handler implements SerializationHandlerInterface
     /**
      * @param Order $order
      */
-    public function fillOrderProducts(Order $order)
+    public function completeOrder(Order $order)
     {
         $order->setCollationOrders($order->getProductOrders()->filter(function($productOrder) {
             return $productOrder instanceof CollationOrder;

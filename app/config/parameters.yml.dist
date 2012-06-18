@@ -18,3 +18,9 @@ parameters:
     application.group.class: YouFood\UserBundle\Entity\Group
 
     assets_base_urls: ['http://youfoodinc.com']
+
+    payment_secret: youfood_payment_top_secret_secret
+
+    paypal_username:  youfoo_1340016415_biz_api1.gmail.com
+    paypal_password:  1340016444
+    paypal_signature: A7-8nPB23JVAkcoUTl1c68RcGdU1AARgo-xHWDIghsovPQtTWIwIdmdw

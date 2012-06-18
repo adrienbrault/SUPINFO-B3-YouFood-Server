@@ -2,7 +2,10 @@
 
 namespace YouFood\MainBundle\Repository;
 
+use JMS\Payment\CoreBundle\Entity\PaymentInstruction;
+
 use YouFood\Doctrine\ORM\EntityRepository;
+use YouFood\MainBundle\Entity\Order;
 
 /**
  * OrderRepository
@@ -35,5 +38,17 @@ class OrderRepository extends EntityRepository
             ->setParameter('date_max', $dateMax);
 
         return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * @param PaymentInstruction $paymentInstruction
+     *
+     * @return Order
+     */
+    public function findOneByPaymentInstruction(PaymentInstruction $paymentInstruction)
+    {
+        return $this->findOneBy(array(
+            'paymentInstruction' => $paymentInstruction,
+        ));
     }
 }

@@ -27,6 +27,10 @@ media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
 
+youfood_payment:
+    type: annotation
+    resource: '@YouFoodPaymentBundle/Controller/'
+
 youfood_api_rest:
     type: rest
     resource: '@YouFoodApiBundle/Resources/config/routing_rest.yml'

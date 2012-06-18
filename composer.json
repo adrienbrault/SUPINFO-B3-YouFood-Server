@@ -31,7 +31,8 @@
         "snc/redis-bundle": "dev-master",
         "predis/predis": "dev-master",
         "predis/predis-async": "dev-master",
-        "react/react": "dev-master"
+        "react/react": "dev-master",
+        "jms/payment-paypal-bundle" :"dev-master"
     },
     "scripts": {
         "post-install-cmd": [

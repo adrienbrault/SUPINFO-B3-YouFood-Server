@@ -10,6 +10,7 @@ use FOS\RestBundle\Controller\Annotations\NamePrefix;
 use FOS\RestBundle\Controller\Annotations\Route;
 use FOS\RestBundle\View\View;
 use FOS\RestBundle\View\RouteRedirectView;
+use FOS\Rest\Util\Codes;
 
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
@@ -29,36 +30,6 @@ use YouFood\MainBundle\Repository\OrderRepository;
  */
 class TableOrdersController extends Controller
 {
-    /**
-     * @param int $table_id The table id
-     * @param int $id       The order id
-     *
-     * @return View
-     *
-     * @ApiDoc(resource=true, description="Get an order")
-     * @Route(requirements={"table_id"="\d+", "id"="\d+"})
-     */
-    public function getOrderAction($table_id, $id)
-    {
-        $table = $this->getRepository('Table')->find($table_id);
-        $order = $this->getRepository()->find($id);
-
-        if (null === $table || null === $order) {
-            throw $this->createNotFoundException('Order not found.');
-        }
-
-        $view = View::create($order);
-        $view->setSerializerGroups(array(
-            'id',
-            'order_full',
-            'product_order_full',
-            'collation_order_full',
-            'menu_order_full',
-        ));
-
-        return $view;
-    }
-
     /**
      * @param Request $request  The request
      * @param int     $table_id The table id
@@ -88,9 +59,10 @@ class TableOrdersController extends Controller
             $em->persist($order);
             $em->flush();
 
-            $view = RouteRedirectView::create('youfood_api_rest_get_table_order', array(
-                'table_id' => $order->getTable()->getId(),
+            $view = RouteRedirectView::create('youfood_api_rest_get_order', array(
                 'id' => $order->getId(),
+            ), Codes::HTTP_CREATED, array(
+                'YouFood-PaymentUrl' => $this->generateUrl('youfood_payment_payment_details', array('id' => $order->getId()), true),
             ));
         } else {
             $view = View::create($form, 400);

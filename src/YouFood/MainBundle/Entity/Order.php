@@ -5,6 +5,8 @@ namespace YouFood\MainBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use JMS\Payment\CoreBundle\Entity\PaymentInstruction;
+
 /**
  * Order
  *
@@ -69,6 +71,20 @@ class Order
      * @var array
      */
     private $menuOrders;
+
+    /**
+     * @var PaymentInstruction
+     *
+     * @ORM\OneToOne(targetEntity="JMS\Payment\CoreBundle\Entity\PaymentInstruction")
+     */
+    private $paymentInstruction;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(type="float")
+     */
+    private $amount;
 
     /**
      * Constructor
@@ -162,7 +178,7 @@ class Order
     /**
      * @return boolean
      */
-    public function getPaid()
+    public function isPaid()
     {
         return $this->paid;
     }
@@ -178,10 +194,11 @@ class Order
     /**
      * @return boolean
      */
-    public function getServed()
+    public function isServed()
     {
         return $this->served;
     }
+
 
     /**
      * @return array
@@ -213,5 +230,37 @@ class Order
     public function setMenuOrders($menuOrders)
     {
         $this->menuOrders = $menuOrders;
+    }
+
+    /**
+     * @param float $amount
+     */
+    public function setAmount($amount)
+    {
+        $this->amount = $amount;
+    }
+
+    /**
+     * @return float
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @param mixed $paymentInstruction
+     */
+    public function setPaymentInstruction($paymentInstruction)
+    {
+        $this->paymentInstruction = $paymentInstruction;
+    }
+
+    /**
+     * @return PaymentInstruction
+     */
+    public function getPaymentInstruction()
+    {
+        return $this->paymentInstruction;
     }
 }

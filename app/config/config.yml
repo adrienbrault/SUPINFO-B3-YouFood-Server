@@ -74,6 +74,8 @@ doctrine:
 
                     FOSOAuthServerBundle: ~
 
+                    JMSPaymentCoreBundle: ~
+
 stof_doctrine_extensions:
     orm:
         default:
@@ -247,3 +249,12 @@ nelmio_api_doc:
 you_food_main: ~
 
 you_food_api:
+
+jms_payment_paypal:
+    username: %paypal_username%
+    password: %paypal_password%
+    signature: %paypal_signature%
+    debug: true
+
+jms_payment_core:
+    secret: %payment_secret%
