@@ -32,6 +32,7 @@ class PaymentListener
     public function __construct(EntityManager $em, $redis)
     {
         $this->em = $em;
+        $this->redis = $redis;
     }
 
     /**
