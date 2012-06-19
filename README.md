@@ -1,3 +1,12 @@
+# Install dependencies
+
+Run the followwing commands to install dependencies:
+
+```
+curl -s http://getcomposer.org/installer | php
+php composer.phar install
+```
+
 # Create an admin user
 
 ```
