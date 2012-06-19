@@ -6,6 +6,8 @@ use JMS\Payment\CoreBundle\Entity\PaymentInstruction;
 
 use YouFood\Doctrine\ORM\EntityRepository;
 use YouFood\MainBundle\Entity\Order;
+use YouFood\MainBundle\Entity\Restaurant;
+use YouFood\MainBundle\Entity\Category;
 
 /**
  * OrderRepository
@@ -50,5 +52,52 @@ class OrderRepository extends EntityRepository
         return $this->findOneBy(array(
             'paymentInstruction' => $paymentInstruction,
         ));
+    }
+
+    public function selectPaidOrdersCountByPeriodQB(\DateTime $minDate = null, \DateTime $maxDate = null)
+    {
+        $qb = $this->createQueryBuilder('o');
+
+        $qb->andWhere($qb->expr()->eq('o.paid', '1'));
+
+        if ($minDate) {
+            $qb ->andWhere($qb->expr()->gte('o.date', ':min_date'))
+                ->setParameter('min_date', $minDate);
+        }
+
+        if ($maxDate) {
+            $qb ->andWhere($qb->expr()->lte('o.date', ':max_date'))
+                ->setParameter('max_date', $maxDate);
+        }
+
+        $qb->select($qb->expr()->count('o'));
+
+        return $qb;
+    }
+
+    public function getPaidOrdersCountByRestaurantAndPeriod(Restaurant $restaurant, \DateTime $minDate = null, \DateTime $maxDate = null)
+    {
+        $qb = $this->selectPaidOrdersCountByPeriodQB($minDate, $maxDate);
+
+        $qb->join('o.table', 't');
+        $qb->join('t.zone', 'z');
+
+        $qb ->andWhere($qb->expr()->eq('z.restaurant', ':restaurant'))
+            ->setParameter('restaurant', $restaurant);
+
+        return $qb->getQuery()->getSingleScalarResult();
+    }
+
+    public function getPaidOrdersCountByCategoryAndPeriod(Category $category, \DateTime $minDate = null, \DateTime $maxDate = null)
+    {
+        $qb = $this->selectPaidOrdersCountByPeriodQB($minDate, $maxDate);
+
+        $qb->join('o.productOrders', 'po');
+
+        $qb->andWhere('po IN (SELECT co FROM YouFoodMainBundle:CollationOrder AS co JOIN co.collation AS collation WHERE collation.category = :category)');
+
+        $qb->setParameter('category', $category);
+
+        return $qb->getQuery()->getSingleScalarResult();
     }
 }

@@ -20,6 +20,9 @@ class YouFoodMainExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('admin.yml');
+
+        foreach (array('admin.yml', 'block.yml') as $file) {
+            $loader->load($file);
+        }
     }
 }

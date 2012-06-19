@@ -24,6 +24,8 @@ class OrderAdmin extends Admin
             ->addIdentifier('id')
             ->add('table')
             ->add('date')
+            ->add('paid')
+            ->add('served')
 
         // add custom action links
             ->add('_action', 'actions', array(
@@ -43,6 +45,8 @@ class OrderAdmin extends Admin
             ->add('id')
             ->add('table')
             ->add('date')
+            ->add('paid')
+            ->add('served')
             ->add('productOrders')
         ;
     }

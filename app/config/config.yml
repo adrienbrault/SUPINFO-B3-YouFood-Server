@@ -114,6 +114,8 @@ sonata_block:
         #sonata.media.block.gallery:
         #sonata.media.block.feature_media:
 
+        you_food.block.charts:
+
 sonata_admin:
     title:      YouFood
     #title_logo: /bundles/sonataadmin/logo_title.png
@@ -130,6 +132,7 @@ sonata_admin:
         blocks:
             # display a dashboard block
             - { position: left, type: sonata.admin.block.admin_list }
+            - { position: right, type: you_food.block.charts }
 
         groups:
             you_food.menu:

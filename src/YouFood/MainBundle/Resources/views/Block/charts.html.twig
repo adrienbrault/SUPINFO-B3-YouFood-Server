@@ -1,0 +1,55 @@
+<script type="text/javascript" src="{{ asset('bundles/youfoodmain/flotr2.min.js') }}"></script>
+
+<h3>Orders by restaurant.</h3>
+<div id="chart1" style="width: 600px; height: 450px;"></div>
+
+<script type="text/javascript">
+    (function basic_pie(container) {
+
+        var graph = Flotr.draw(container, {{ chart1_data|json_encode|raw }}, {
+            HtmlText : false,
+            grid : {
+                verticalLines : false,
+                horizontalLines : false
+            },
+            xaxis : { showLabels : false },
+            yaxis : { showLabels : false },
+            pie : {
+                show : true,
+                explode : 6
+            },
+            mouse : { track : true },
+            legend : {
+                position : 'se',
+                backgroundColor : '#D2E8FF'
+            }
+        });
+    })(document.getElementById("chart1"));
+</script>
+
+<h3>Orders by category.</h3>
+<div id="chart2" style="width: 600px; height: 450px;"></div>
+
+<script type="text/javascript">
+    (function basic_pie(container) {
+
+        var graph = Flotr.draw(container, {{ chart2_data|json_encode|raw }}, {
+            HtmlText : false,
+            grid : {
+                verticalLines : false,
+                horizontalLines : false
+            },
+            xaxis : { showLabels : false },
+            yaxis : { showLabels : false },
+            pie : {
+                show : true,
+                explode : 6
+            },
+            mouse : { track : true },
+            legend : {
+                position : 'se',
+                backgroundColor : '#D2E8FF'
+            }
+        });
+    })(document.getElementById("chart2"));
+</script>

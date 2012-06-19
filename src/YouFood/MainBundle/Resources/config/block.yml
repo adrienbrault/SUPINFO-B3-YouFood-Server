@@ -1,0 +1,9 @@
+parameters:
+    you_food.block.charts: YouFood\MainBundle\Block\ChartsBlockService
+
+services:
+    you_food.block.charts:
+        class: %you_food.block.charts%
+        arguments: ["Statistics", @templating, @doctrine.orm.entity_manager]
+        tags:
+          - { name: sonata.block }
