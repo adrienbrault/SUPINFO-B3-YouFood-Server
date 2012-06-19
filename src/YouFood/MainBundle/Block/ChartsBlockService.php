@@ -55,7 +55,7 @@ class ChartsBlockService extends BaseBlockService
                 'data' => array(
                     array(
                         0,
-                        (int) $orderRepository->getPaidOrdersCountByRestaurantAndPeriod($restaurant),
+                        (int) $orderRepository->getPaidOrdersCountByRestaurantAndPeriod($restaurant) + 1,
                     ),
                 ),
             );
@@ -69,7 +69,7 @@ class ChartsBlockService extends BaseBlockService
                 'data' => array(
                     array(
                         0,
-                        (int) $orderRepository->getPaidOrdersCountByCategoryAndPeriod($category),
+                        (int) $orderRepository->getPaidOrdersCountByCategoryAndPeriod($category) + 1,
                     ),
                 ),
             );
